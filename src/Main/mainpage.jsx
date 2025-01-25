@@ -53,10 +53,10 @@ function MainPage() {
                 <div className="ImpludePhrase" ref={phraseRef}>
                     <h1>당신의 상상이 현실이 되도록</h1>
                     <div>
-                        YOUR {messageBar(244)} <span className="PhraseBlue">(IM)</span>PACT <br />
-                        <span className="PhraseBlue">(P)</span>ASSION {messageBar(96)} <span className="PhraseBlue">(L)</span>EARN {messageBar(132)} <br />
-                        FUT<span className="PhraseBlue">(U)</span>RE {messageBar(188)} <span className="PhraseBlue">(D)</span>REAM <br />
-                        {messageBar(114)} POTENTIAL {messageBar(62)} T<span className="PhraseBlue">(E)</span>AM
+                        YOUR {messageBar(244)} <span className="PhraseBlue">IM</span>PACT <br />
+                        <span className="PhraseBlue">P</span>ASSION {messageBar(96)} <span className="PhraseBlue">L</span>EARN {messageBar(132)} <br />
+                        FUT<span className="PhraseBlue">U</span>RE {messageBar(188)} <span className="PhraseBlue">D</span>REAM <br />
+                        {messageBar(114)} POTENTIAL {messageBar(62)} T<span className="PhraseBlue">E</span>AM
                     </div>
                 </div>
             </div>

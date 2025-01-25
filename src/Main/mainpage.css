@@ -23,6 +23,11 @@
 .ArrowBottom {
     width: 3.1vw;
     margin-top: 1.6vw;
+    margin-bottom: 1vw;
+}
+
+.ArrowBottom:hover{
+    width: 3.3vw;
 }
 
 .PhraseBlue {
