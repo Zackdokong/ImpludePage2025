@@ -1,0 +1,90 @@
+/* 컨테이너 스타일 */
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start; /* 왼쪽 정렬 */
+    justify-content: space-between; /* 양쪽 정렬 */
+    padding: 3rem 2rem;
+    background-color: #101010; /* 어두운 배경색 */
+    color: white; /* 텍스트 색상 */
+    border-top: 2px solid #037AFF; /* 상단에 강조선 */
+}
+
+/* 로고와 정보 묶음 */
+.logoWrapper {
+    display: flex;
+    justify-content: flex-start; /* 왼쪽 정렬 */
+    flex-direction: row;
+    gap: 1.5vw;
+    max-width: 60%; /* 일정 크기 이상 확장되지 않게 설정 */
+}
+
+/* 로고 스타일 */
+.Logo {
+    width: 250px;
+    height: auto;
+    margin-bottom: 1.5rem;
+}
+
+/* 정보 텍스트 스타일 */
+.Info h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    margin-left: 1rem;
+}
+
+.Info h3 {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+    line-height: 1.5;
+    font-weight: 300;
+    margin-left: 1rem;
+}
+
+/* SNS 아이콘들 */
+.sns {
+    display: flex;
+    gap: 2vw; /* 아이콘 간 간격 */
+    align-items: center;
+    padding-right: 2vw;
+}
+
+.sns img {
+    width: 60px; /* 아이콘 크기 */
+    height: 60px;
+    object-fit: contain;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.sns img:hover {
+    transform: scale(1.1); /* 호버 시 아이콘 크기 약간 커짐 */
+}
+
+/* 반응형 설정 */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: flex-start; /* 왼쪽 정렬 */
+        padding: 2rem 1.5rem;
+    }
+
+    .logoWrapper {
+        margin-bottom: 1.5rem;
+        max-width: 100%; /* 화면 크기가 작을 때는 100%로 확장 */
+    }
+
+    .Info h1 {
+        font-size: 2rem;
+    }
+
+    .Info h3 {
+        font-size: 1rem;
+    }
+
+    .sns {
+        justify-content: flex-start; /* SNS 아이콘도 왼쪽에 붙이기 */
+        margin-top: 1rem;
+    }
+}

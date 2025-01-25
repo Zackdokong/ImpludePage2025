@@ -3,7 +3,8 @@ import ImpludeLogo from '../assets/implude.svg';
 import styled, { keyframes } from 'styled-components';
 import ArrowBottom from '../assets/arrow_bottom.svg';
 import { useRef } from 'react';
-import { Link } from 'react-router-dom';
+import Header from '../components/header'
+import Footer from '../components/footer'
 
 function MainPage() {
     const phraseRef = useRef(null); // ImpludePhrase의 h1을 참조할 ref
@@ -42,15 +43,7 @@ function MainPage() {
 
     return (
         <>
-            <div className="header">
-                <Link className="title" to="/"><h1>#IMPLUDE</h1></Link>
-                <div className="headerGoto">
-                    <Link><h1>소개</h1></Link>
-                    <Link><h1>팀원</h1></Link>
-                    <Link><h1>실적</h1></Link>
-                    <Link><h1>인재상</h1></Link>
-                </div>
-            </div>
+            <Header />
             <div className="wrapper">
                 <div className="LogoWrapper">
                     <img className="ImpludeLogo" src={ImpludeLogo} alt="Implude Logo" />
@@ -67,9 +60,7 @@ function MainPage() {
                     </div>
                 </div>
             </div>
-            <div className="footer">
-                {/* 푸터 내용 */}
-            </div>
+            <Footer />
         </>
     );
 }
