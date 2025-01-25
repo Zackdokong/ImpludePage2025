@@ -1,5 +1,4 @@
 .wrapper {
-    display: flex;
     justify-content: center;
     padding: 50px;
 }
@@ -19,4 +18,21 @@
     width: 400px;
     height: auto;
     
+}
+
+.PhraseBlue {
+    color: #037AFF;
+}
+
+.ImpludePhrase {
+    border-radius: '20px';
+    font-size: 96px;
+    text-align: center;
+    font-weight: bold;
+    padding: 8rem 0;
+    margin: 0 3rem;
+}
+
+.ImpludePhrase h1 {
+    font-size: 100px;
 }
