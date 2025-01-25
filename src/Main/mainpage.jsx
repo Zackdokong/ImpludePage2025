@@ -1,6 +1,7 @@
 import './mainpage.css';
 import ImpludeLogo from '../assets/implude.svg';
 import styled, { keyframes } from 'styled-components';
+import ArrowBottom from '../assets/arrow_bottom.svg';
 
 function MainPage() {
     function messageBar(n) {
@@ -35,6 +36,7 @@ function MainPage() {
                 <div className="LogoWrapper">
                     <img className="ImpludeLogo" src={ImpludeLogo} alt="Implude Logo" />
                     <h1>#IMPLUDE</h1>
+                    <img className="ArrowBottom" src={ArrowBottom} alt="arrow"/>
                 </div>
                 <div className="ImpludePhrase">
                     <h1>당신의 상상이 현실이 되도록</h1> {/*여기 폰트 개구린거 쓰니까 느낌이 하나도 없음*/}

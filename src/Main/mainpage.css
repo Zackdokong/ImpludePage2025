@@ -1,6 +1,7 @@
 .wrapper {
     justify-content: center;
-    padding: 150px;
+    padding: 100px;
+    padding-bottom: 150px;
 }
 
 .LogoWrapper {
@@ -18,6 +19,11 @@
     width: 400px;
     height: auto;
     
+}
+
+.ArrowBottom {
+    width: 60px;
+    margin-top: 30px;
 }
 
 .PhraseBlue {
