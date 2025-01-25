@@ -1,0 +1,22 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+}
+
+.LogoWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.LogoWrapper  h1{
+    font-size: 100px;
+}
+
+.ImpludeLogo {
+    width: 400px;
+    height: auto;
+    
+}
