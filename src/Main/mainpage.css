@@ -1,6 +1,6 @@
 .wrapper {
     justify-content: center;
-    padding: 5.2vw;
+    padding: 4vw;
     padding-bottom: 7.8vw;
 }
 
@@ -12,7 +12,7 @@
 }
 
 .LogoWrapper h1 {
-    font-size: 5.2vw;
+    font-size: 4vw;
 }
 
 .ImpludeLogo {
@@ -45,4 +45,24 @@
 
 .ImpludePhrase h1 {
     font-size: 5.2vw;
+}
+
+
+.header {
+    display: flex;
+    border-bottom: 1px solid black;
+    justify-content: space-between; /* 좌우로 분리 */
+    align-items: center; /* 수직 중앙 정렬 */
+    padding: 0 1vw; /* 좌우 여백 추가 */
+}
+
+.title h1 {
+    margin-left: 2vw;
+}
+
+.headerGoto {
+    display: flex;
+    gap: 2vw; /* 링크 간격 조정 */
+    margin-left: auto; /* 오른쪽으로 붙이기 */
+    padding-right: 2vw;
 }

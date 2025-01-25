@@ -3,6 +3,13 @@
     text-decoration: none;
 }
 
+a{
+    text-decoration: none;
+}
+a:visited {
+    color: inherit; /* 방문 후에도 색상이 바뀌지 않도록 설정 */
+}
+
 @font-face {
     font-family: 'Tenada';
     src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-2@1.0/Tenada.woff2') format('woff2');
@@ -15,4 +22,15 @@
     src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body::-webkit-scrollbar {
+    display: none; /* Chrome, Edge, Safari에서 스크롤바 숨김 */
 }
