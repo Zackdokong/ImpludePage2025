@@ -9,7 +9,32 @@ import Footer from "../components/footer";
 import "./mainpage.css";
 
 function MainPage() {
+  const handleLinkClick = (path) => {
+    navigate(path);
+    window.scrollTo(0, 0); // 페이지 맨 위로 스크롤
+  };
+
   const phraseRef = useRef(null);
+  const keyvalueData = [
+    {
+      detail: "팀워크"
+    },
+    {
+      detail: "자유롭고 편한 소통"
+    },
+    {
+      detail: "많은 실전 경험"
+    },
+    {
+      detail: "실패를 즐기는"
+    },
+    {
+      detail: "지속적인 혁신"
+    },
+    {
+      detail: "깊은 신뢰"
+    },
+  ]
   const achievementsData = [
     {
       year: 2024,
@@ -54,11 +79,17 @@ function MainPage() {
   ];
 
   const [randomAchievement, setRandomAchievement] = useState(getRandomAchievement);
+  const [randomValue, setRandomValue] = useState(getRandomValue);
+  function getRandomValue() {
+    const randomValue = keyvalueData[Math.floor(Math.random() * keyvalueData.length)];
+    return `${randomValue.detail}`; // 'detail' 속성을 반환하도록 수정
+  }
+  
 
   function getRandomAchievement() {
     const randomYear =
       achievementsData[Math.floor(Math.random() * achievementsData.length)];
-    const randomDetail =
+    const randomDetail = 
       randomYear.details[Math.floor(Math.random() * randomYear.details.length)];
     return `${randomYear.year}년 ${randomDetail.description} ${randomDetail.rank}`;
   }
@@ -66,6 +97,7 @@ function MainPage() {
   useEffect(() => {
     const interval = setInterval(() => {
       setRandomAchievement(getRandomAchievement());
+      setRandomValue(getRandomValue());
     }, 3000); // 3초마다 새로운 실적을 보여줌
 
     return () => clearInterval(interval);
@@ -143,7 +175,17 @@ function MainPage() {
               오늘도 우리의 상상이 세상을 바꿀 수 있도록, <br />
               임플루드는 오늘도 달리고 있습니다.
             </p>
-            <Link to="/introduce" className="link-button">
+            <motion.div
+              key={randomValue} // 실적이 변경될 때마다 애니메이션을 새로 시작하게 합니다.
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1 }}
+              className="random-value"
+            >
+              <p>{randomValue}</p>
+            </motion.div>
+            <Link to="/introduce" className="link-button" onClick={handleLinkClick}>
               임플루드의 핵심가치 알아보기!
             </Link>
           </div>
@@ -167,7 +209,7 @@ function MainPage() {
             >
               <p>{randomAchievement}</p>
             </motion.div>
-            <Link to="/achievement" className="link-button">
+            <Link to="/achievement" className="link-button" onClick={handleLinkClick}>
               임플루드의 실적 알아보기!
             </Link>
           </div>
