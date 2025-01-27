@@ -77,17 +77,20 @@ a:visited {
 
 /* 개별 카드 스타일 */
 .card {
+    display: flex;
+    flex-direction: column;
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 1.5rem;
-    width: 13.021vw;
-    height: 10vw;
-    max-width: 13.021vw;
-    max-height: 13.021vw;
+    width: 15vw;
+    height: 15vw;
+    max-width: 15vw;
+    max-height: 13vw;
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
+    align-items: center;
 }
 
 .card:hover {
@@ -104,7 +107,7 @@ a:visited {
 
 .card h4 {
     font-family: 'PyeongChang-Bold';
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin-bottom: 0.5rem;
     color: #007bff;
 }

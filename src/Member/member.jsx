@@ -16,7 +16,7 @@ export default function Member() {
     },
     {
       name: "이승준",
-      role: "포지션",
+      role: "App, FE developer",
       bio: "한줄소개",
     },
     {
@@ -41,8 +41,8 @@ export default function Member() {
     },
     {
       name: "이연준",
-      role: "포지션",
-      bio: "한줄소개",
+      role: "DevOps, Backend-Engineer",
+      bio: "SWA를 꿈꾸는 백엔드 엔지니어, 이연준입니다!",
     },
   ]; //임플루드 10기 데이터
 

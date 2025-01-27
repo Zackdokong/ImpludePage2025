@@ -11,9 +11,7 @@ function Router() {
         <Routes>
             <Route path="/" element={<MainPage />} />
             <Route path="/introduce" element={<Introduce />}/>
-            <Route path="/member" element={<Member />}>
-                <Route path="/member/apply"></Route>
-            </Route>
+            <Route path="/member" element={<Member />} />
             <Route path="/ideal" element={<Ideal />}/>
             <Route path="/achievement" element={<Achievement />}/>
         </Routes>
