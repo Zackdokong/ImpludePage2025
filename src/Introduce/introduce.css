@@ -5,9 +5,8 @@
     align-items: center; /* 세로 중앙 정렬 */
     justify-content: flex-start; /* 왼쪽 정렬 */
     padding: 4vw 2rem; /* 여백 */
-    background-color: #f0f0f0; /* 배경색 */
+    background-color: white; /* 배경색 */
     color: #333; /* 텍스트 색상 */
-    border-radius: 20px; /* 테두리 둥글게 */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
     margin: 5vw 0;
     text-align: left; /* 텍스트 왼쪽 정렬 */
@@ -22,7 +21,6 @@
     font-size: 4rem;
     font-weight: 600;
     color: black; /* 제목 색상 */
-    margin-bottom: 1rem;
     padding-top: 0;
     margin-top: 0;
 }
@@ -52,20 +50,119 @@
     margin-bottom: 1.5rem; /* 각 문단 사이 간격 */
 }
 
-/* 반응형 디자인 (작은 화면일 경우) */
+/* 전체 래퍼 스타일 */
+.valueWrapper {
+    padding: 4vw 2rem;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    margin: 5vw 0;
+    margin-top: 0;
+}
+
+/* 제목 스타일 */
+.valueWrapper h1 {
+    font-size: 4rem;
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 3rem;
+}
+
+/* 내용 전체 묶음 */
+.valueMent {
+    display: flex;
+    flex-wrap: wrap; /* 여러 줄로 배치 */
+    justify-content: center; /* 중앙 정렬 */
+    gap: 2rem; /* 요소 간 간격 */
+}
+
+/* 각각의 가치 영역 */
+.valueMent div {
+    width: 100%; /* 기본적으로 전체 너비 사용 */
+    max-width: 450px; /* 카드의 최대 너비 */
+    background-color: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    text-align: left; /* 텍스트 왼쪽 정렬 */
+    line-height: 1.8; /* 줄 간격 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid gray;
+}
+
+/* 핵심 주제 스타일 */
+.theme {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #037AFF;
+    display: block; /* 제목을 별도 줄에 배치 */
+    margin-bottom: 1rem;
+}
+
+/* 세부 내용 스타일 */
+.detail {
+    font-size: 1.2rem;
+    color: #555;
+    font-weight: 400;
+}
+
+
 @media (max-width: 768px) {
+    /* introduceWrapper 스타일 */
     .introduceWrapper {
-        flex-direction: column; /* 모바일에서는 세로로 배치 */
-        padding: 4vw 1.5rem; /* 모바일에서 여백 줄임 */
+        flex-direction: column; /* 세로 정렬 */
+        align-items: center; /* 중앙 정렬 */
+        padding: 3vw 1rem; /* 여백 조정 */
+        gap: 1.5rem; /* 요소 간 간격 줄임 */
     }
 
+    /* Vision 이미지 스타일 */
     .Vision {
-        width: 80vw; /* 모바일에서 이미지 크기 크게 */
-        margin-bottom: 1.5rem; /* 이미지와 텍스트 사이 간격 */
+        width: 90%; /* 너비를 화면에 맞춤 */
+        max-width: 100%; /* 최대 너비 제한 해제 */
+        margin-right: 0; /* 이미지 간격 제거 */
+        margin-bottom: 1.5rem; /* 이미지 아래 여백 추가 */
     }
 
+    /* OgleMent 텍스트 스타일 */
     .OgleMent {
-        font-size: 1.2rem; /* 텍스트 크기 조정 */
-        width: 90%; /* 텍스트의 너비 증가 */
+        width: 100%; /* 텍스트 전체 너비 사용 */
+        max-width: 100%; /* 최대 너비 제한 해제 */
+        font-size: 1.2rem; /* 폰트 크기 조정 */
+        line-height: 1.6; /* 줄 간격 조정 */
+        text-align: center; /* 텍스트 중앙 정렬 */
+    }
+
+    /* valueWrapper 스타일 */
+    .valueWrapper {
+        padding: 3vw 1rem; /* 여백 축소 */
+    }
+
+    /* valueMent 묶음 스타일 */
+    .valueMent {
+        flex-direction: column; /* 세로 정렬 */
+        align-items: center; /* 중앙 정렬 */
+        gap: 1.5rem; /* 카드 간 간격 줄임 */
+    }
+
+    /* 각각의 가치 영역 */
+    .valueMent div {
+        width: 90%; /* 카드 너비를 화면에 맞춤 */
+        max-width: 100%; /* 최대 너비 제한 해제 */
+        padding: 1.5rem; /* 내부 여백 축소 */
+        font-size: 1rem; /* 폰트 크기 축소 */
+    }
+
+    /* 핵심 주제 스타일 */
+    .theme {
+        font-size: 1.8rem; /* 주제 크기 축소 */
+        margin-bottom: 0.8rem; /* 간격 축소 */
+    }
+
+    /* 세부 내용 스타일 */
+    .detail {
+        font-size: 1rem; /* 텍스트 크기 축소 */
+        line-height: 1.5; /* 줄 간격 조정 */
+        text-align: center; /* 중앙 정렬 */
     }
 }

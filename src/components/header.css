@@ -1,6 +1,8 @@
 a{
     text-decoration: none;
+    color: black;
 }
+
 a:visited {
     color: inherit; /* 방문 후에도 색상이 바뀌지 않도록 설정 */
 }
