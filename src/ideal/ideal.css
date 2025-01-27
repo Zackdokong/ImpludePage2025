@@ -1,0 +1,69 @@
+.ideal-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 200vw; /* 1200px 대신 90vw로 변경 */
+    margin: 0 auto;
+    padding: 4vw 2vw; /* 40px 20px 대신 4vw 2vw로 변경 */
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    justify-self: center;
+    align-items: center;
+  }
+  
+  .ideal-title {
+    font-size: 3rem; /* 6vw 대신 3rem로 원래대로 유지 */
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 4vw; /* 40px 대신 4vw로 변경 */
+  }
+  
+  .ideal-values {
+    gap: 3vw; /* 30px 대신 3vw로 변경 */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .value-item {
+    background-color: #f9f9f9;
+    padding: 2rem 1.5rem; /* 4vw 3vw 대신 2rem 1.5rem으로 원래대로 유지 */
+    border-radius: 1.2vw; /* 12px 대신 1.2vw로 변경 */
+    box-shadow: 0 0.4vw 1vw rgba(0, 0, 0, 0.1); /* 4px 10px 대신 vw로 변경 */
+    transition: all 0.3s ease;
+    max-width: 65vw;
+  }
+  
+  .value-item:hover {
+    box-shadow: 0 0.6vw 1.5vw rgba(0, 0, 0, 0.15); /* 6px 15px 대신 vw로 변경 */
+  }
+  
+  .value-item h2 {
+    font-size: 1.8rem; /* 4vw 대신 1.8rem으로 원래대로 유지 */
+    font-weight: 600;
+    color: #007bff;
+    margin-bottom: 2vw; /* 20px 대신 2vw로 변경 */
+  }
+  
+  .value-item span {
+    font-size: 1.2rem; /* 3vw 대신 1.2rem으로 원래대로 유지 */
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  .icon {
+    width: 3rem; /* 5vw 대신 3rem으로 원래대로 유지 */
+    height: 3rem; /* 5vw 대신 3rem으로 원래대로 유지 */
+    background-color: #007bff;
+    border-radius: 50%;
+    margin-bottom: 2vw; /* 20px 대신 2vw로 변경 */
+    display: inline-block;
+  }
+  
+  /* 아이콘에 맞는 추가 스타일링 */
+  .value-item .icon::after {
+    content: "💡"; /* 아이콘을 텍스트로 설정 */
+    font-size: 2rem; /* 4vw 대신 2rem으로 원래대로 유지 */
+    color: white;
+    text-align: center;
+    line-height: 3rem; /* 높이와 맞춰주기 위해 line-height 설정 */
+  }
+  

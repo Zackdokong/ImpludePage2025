@@ -8,7 +8,7 @@ const achievementsData = [
     year: 2024,
     details: [
       { rank: "1위", description: "비즈쿨 우수창업동아리" },
-      { rank: "2위", description: "Junction Asia 2024 Apple Track" },
+      { rank: "2위", description: "Junction Asia Apple Developer Academy@POSTECH track"},
       { rank: "대상", description: "레드브릭 게임개발대회" },
       { rank: "대상", description: "한국코드페어 SW 공모전" },
       { rank: "대상", description: "2024 데이터 크리에이터캠프" },
