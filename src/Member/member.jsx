@@ -8,41 +8,41 @@ export default function Member() {
   const [activeTab, setActiveTab] = useState("23기");
 
   const tenth = [
-    { name: "최수현", role: "팀 리더", bio: "React와 Firebase 전문가." },
+    { name: "김민찬", role: "포지션", bio: "한줄소개" },
     {
-      name: "한유진",
-      role: "프론트엔드 개발자",
-      bio: "UI/UX 구현에 열정이 많습니다.",
+      name: "이지민",
+      role: "포지션",
+      bio: "한줄소개",
     },
     {
-      name: "김도윤",
-      role: "백엔드 개발자",
-      bio: "Node.js와 MySQL을 주로 다룹니다.",
+      name: "이승준",
+      role: "포지션",
+      bio: "한줄소개",
     },
     {
-      name: "박민지",
-      role: "디자이너",
-      bio: "창의적인 브랜딩과 UI 디자인이 강점입니다.",
+      name: "박은빈",
+      role: "포지션",
+      bio: "한줄소개",
     },
     {
-      name: "이준혁",
-      role: "프로덕트 매니저",
-      bio: "팀워크와 기획을 담당합니다.",
+      name: "김소은",
+      role: "포지션",
+      bio: "한줄소개",
     },
     {
-      name: "서하은",
-      role: "QA 엔지니어",
-      bio: "서비스 품질과 테스트를 담당합니다.",
+      name: "최현서",
+      role: "포지션",
+      bio: "한줄소개",
     },
     {
-      name: "정민호",
-      role: "모바일 앱 개발자",
-      bio: "React Native 전문가입니다.",
+      name: "전소현",
+      role: "포지션",
+      bio: "한줄소개",
     },
     {
-      name: "유다현",
-      role: "데이터 분석가",
-      bio: "데이터 시각화와 분석을 진행합니다.",
+      name: "이연준",
+      role: "포지션",
+      bio: "한줄소개",
     },
   ]; //임플루드 10기 데이터
 
@@ -77,9 +77,9 @@ export default function Member() {
             ))}
         </div>
         {activeTab === "24기" && (
-          <Link className="findOut" to="./apply">
+          <Link className="findOut" to=""> {/*여기에 서핑 링크 넣어야함*/}
             <h1>지금은 11기 <span>임플루드</span> 동아리원을 <span>모집</span>중이에요!</h1>
-            <button className="findOutButton">지원절차 알아보기!</button>
+            <button className="findOutButton">임플루드 지원하러가기!</button>
           </Link>
         )}
       </div>
