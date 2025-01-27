@@ -62,3 +62,37 @@
 .ImpludePhrase h1 {
     font-size: 5.2vw;
 }
+
+@media (max-width: 768px) {
+    .wrapper {
+      padding: 6vw;
+      padding-bottom: 12vw;
+    }
+  
+    .LogoWrapper h1 {
+      font-size: 6vw;
+    }
+  
+    .ImpludeLogo {
+      width: 50vw; /* 모바일 화면에 맞게 크기 조정 */
+    }
+  
+    .ArrowBottom {
+      width: 7vw;
+      margin-top: 3vw;
+      margin-bottom: 4vw;
+    }
+  
+    .ArrowBottom:hover {
+      width: 7.5vw;
+    }
+  
+    .ImpludePhrase {
+      font-size: 8vw;
+      padding: 5vw 0;
+    }
+  
+    .ImpludePhrase h1 {
+      font-size: 9vw; /* 모바일 화면에 맞게 크기 조정 */
+    }
+  }
