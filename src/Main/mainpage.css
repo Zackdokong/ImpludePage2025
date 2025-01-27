@@ -1,98 +1,250 @@
-.wrapper {
-    justify-content: center;
-    padding: 4vw;
-    padding-bottom: 7.8vw;
+a{
+  text-decoration: none;
+  color: white;
+}
+a:visited {
+  color: inherit; /* 방문 후에도 색상이 바뀌지 않도록 설정 */
 }
 
+/* 전체 Wrapper 스타일 */
+.wrapper {
+  justify-content: center;
+  padding-bottom: 7.8vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 로고와 애로우의 스타일 */
 .LogoWrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .LogoWrapper h1 {
-    font-size: 4vw;
+  font-size: 4vw;
 }
 
 .ImpludeLogo {
-    width: 20.8vw;
-    height: auto;
+  width: 20.8vw;
+  height: auto;
+  margin-top: 3vw;
 }
 
 .ArrowBottom {
-    width: 3.1vw;
-    margin-top: 1.6vw;
-    margin-bottom: 3vw;
-    transition: width 0.3s ease;
-  }
-  
-  .ArrowBottom:hover {
-    width: 3.3vw;
-  }
-  
-  @keyframes arrowBounce {
-    0%, 100% {
-      transform: translateY(0) scale(1);
-    }
-    50% {
-      transform: translateY(-10px) scale(1.1);
-    }
-  }
-  
-  .ArrowBottom.animate {
-    animation: arrowBounce 1.5s ease-in-out infinite;
-  }
-  
-
-.PhraseBlue {
-    color: #037AFF;
+  width: 3.1vw;
+  margin-top: 1.6vw;
+  margin-bottom: 3vw;
+  transition: width 0.3s ease;
 }
 
+.ArrowBottom:hover {
+  width: 3.3vw;
+}
+
+@keyframes arrowBounce {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.1);
+  }
+}
+
+.ArrowBottom.animate {
+  animation: arrowBounce 1.5s ease-in-out infinite;
+}
+
+/* 문구 색상 */
+.PhraseBlue {
+  color: #037bFF;
+}
+
+/* 임플루드 문구 영역 */
 .ImpludePhrase {
-    background-color: #f7f7f7;
-    border-radius: 1vw;
-    font-size: 5vw;
-    text-align: center;
-    font-weight: bold;
-    padding: 4.2vw 0;
-    margin: 0 1.6vw;
+  background-color: #f7f7f7;
+  border-radius: 1vw;
+  font-size: 5vw;
+  text-align: center;
+  font-weight: bold;
+  padding: 4.2vw 10vw;
+  margin: 0 1.6vw;
+  margin-bottom: 3vw;
 }
 
 .ImpludePhrase h1 {
-    font-size: 5.2vw;
+  font-size: 5.2vw;
 }
 
-@media (max-width: 768px) {
-    .wrapper {
-      padding: 6vw;
-      padding-bottom: 12vw;
-    }
-  
-    .LogoWrapper h1 {
-      font-size: 6vw;
-    }
-  
-    .ImpludeLogo {
-      width: 50vw; /* 모바일 화면에 맞게 크기 조정 */
-    }
-  
-    .ArrowBottom {
-      width: 7vw;
-      margin-top: 3vw;
-      margin-bottom: 4vw;
-    }
-  
-    .ArrowBottom:hover {
-      width: 7.5vw;
-    }
-  
-    .ImpludePhrase {
-      font-size: 8vw;
-      padding: 5vw 0;
-    }
-  
-    .ImpludePhrase h1 {
-      font-size: 9vw; /* 모바일 화면에 맞게 크기 조정 */
-    }
+.summary-wrapper{
+  display: flex;
+  justify-content: space-between;
+  gap: 2vw;
+  background-color: #f7f7f7;
+  align-items: start;
+}
+
+/* 임플루드 소개 섹션 */
+.introduceSummary {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4vw 4vw;
+  background-color: white;
+  margin-bottom: 2vw;
+  background-color: #f7f7f7;
+  width: 40vw;
+  text-align: center;
+}
+
+.introduceSummary h2 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.introduceSummary p {
+  font-size: 1.3rem;
+  color: #555;
+  margin-bottom: 7rem;
+  line-height: 1.5;
+  width: 80%;
+}
+
+/* 임플루드 실적 섹션 */
+.achievementSummary {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4vw 4vw;
+  background-color: white;
+  margin-bottom: 2vw;
+  background-color: #f7f7f7;
+  width: 40vw;
+  text-align: center;
+}
+
+.achievementSummary h2 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.achievementSummary p {
+  font-size: 1.3rem;
+  color: #555;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  width: 80%;
+}
+
+.link-button {
+  padding: 1rem 2rem;
+  background-color: #007bff;
+  color: white !important; /* 중요도를 높여서 흰색으로 설정 */
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease;
+}
+
+
+.link-button:hover {
+  background-color: #0056b3;
+}
+.link-button a {
+  color: white !important; 
+  text-decoration: none;
+}
+
+.random-achievement {
+  display: flex;
+  width: 40vw;
+  align-items: center; /* 수직 중앙 정렬 */
+  justify-content: center; /* 수평 중앙 정렬 */
+  opacity: 0; /* 처음에는 보이지 않게 */
+  animation: fadeInOut 4s ease-in-out infinite;
+  max-height: 5vw;
+}
+.random-achievement p {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #037bFF !important;
+  margin-bottom: 2vw;
+}
+
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0; /* 처음에는 투명 */
   }
+  25% {
+    opacity: 1; /* 25% 지점에서 완전히 보임 */
+  }
+  50% {
+    opacity: 1; /* 50%까지 계속 보임 */
+  }
+  75% {
+    opacity: 0; /* 75% 지점에서 다시 사라짐 */
+  }
+  100% {
+    opacity: 0; /* 끝에도 여전히 사라져 있음 */
+  }
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 0 6vw;
+    padding-bottom: 12vw;
+  }
+
+  .LogoWrapper h1 {
+    font-size: 6vw;
+  }
+
+  .ImpludeLogo {
+    width: 50vw; /* 모바일 화면에 맞게 크기 조정 */
+  }
+
+  .ArrowBottom {
+    width: 7vw;
+    margin-top: 3vw;
+    margin-bottom: 4vw;
+  }
+
+  .ArrowBottom:hover {
+    width: 7.5vw;
+  }
+
+  .ImpludePhrase {
+    font-size: 8vw;
+    padding: 5vw 0;
+  }
+
+  .ImpludePhrase h1 {
+    font-size: 9vw; /* 모바일 화면에 맞게 크기 조정 */
+  }
+
+  .introduceSummary, .achievementSummary {
+    padding: 6vw 4vw;
+    height: 45vh;
+  }
+
+  .introduceSummary h2, .achievementSummary h2 {
+    font-size: 2rem;
+  }
+
+  .introduceSummary p, .achievementSummary p {
+    font-size: 1rem;
+  }
+
+  .link-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+}
