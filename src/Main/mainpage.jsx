@@ -98,7 +98,7 @@ function MainPage() {
       display: inline-block;
       position: relative;
       bottom: 1.5vw;
-      animation: ${animation} 3s ease-in-out infinite;
+      animation: ${animation} 4s ease-in-out infinite;
     `;
 
     return useMemo(() => <ReturnSpan />, [n]); // useMemo로 memoize

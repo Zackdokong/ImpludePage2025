@@ -61,30 +61,3 @@
 .sns img:hover {
     transform: scale(1.1); /* 호버 시 아이콘 크기 약간 커짐 */
 }
-
-/* 반응형 설정 */
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        align-items: flex-start; /* 왼쪽 정렬 */
-        padding: 2rem 1.5rem;
-    }
-
-    .logoWrapper {
-        margin-bottom: 1.5rem;
-        max-width: 100%; /* 화면 크기가 작을 때는 100%로 확장 */
-    }
-
-    .Info h1 {
-        font-size: 2rem;
-    }
-
-    .Info h3 {
-        font-size: 1rem;
-    }
-
-    .sns {
-        justify-content: flex-start; /* SNS 아이콘도 왼쪽에 붙이기 */
-        margin-top: 1rem;
-    }
-}
