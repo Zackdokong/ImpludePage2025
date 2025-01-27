@@ -1,0 +1,150 @@
+a{
+    text-decoration: none;
+    color: black;
+}
+
+a:visited {
+    color: inherit; /* 방문 후에도 색상이 바뀌지 않도록 설정 */
+}
+
+/* 전체 래퍼 스타일 */
+.memberWrapper {
+    display: flex; /* Flexbox 사용 */
+    justify-content: center; /* 가로로 중앙 정렬 */
+    align-items: center; /* 세로로 중앙 정렬 */
+    flex-direction: column; /* 세로 배치 */
+    padding: 2rem;
+    background-color: #f8f9fa;
+    text-align: center;
+    justify-content: center;
+}
+
+/* 제목 스타일 */
+.memberWrapper h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+/* 탭 버튼 스타일 */
+.tabWrapper {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.tabButton {
+    padding: 0.5rem 1.5rem;
+    font-size: 1.2rem;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color: #333;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.tabButton.active {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
+
+.tabButton:hover {
+    background-color: #0056b3;
+    color: #fff;
+}
+
+/* 카드 그리드 스타일 */
+.gridWrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 한 줄에 4개씩 배치 */
+    gap: 2rem; /* 카드 간 간격 */
+    justify-items: center;
+    max-width: 1400px;
+}
+
+/* 개별 카드 스타일 */
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 250px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* 카드 제목 스타일 */
+.card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.card h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #007bff;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.findOutButton {
+    font-size: 2rem;
+    background-color: #fff;
+    border-color: 1px solid gray ;
+    border-radius: 3rem;
+    padding: 1vw 2vw;
+}
+
+/* Link 스타일 */
+.findOut {
+    text-decoration: none; /* 링크 밑줄 제거 */
+    display: inline-block; /* 버튼 크기에 맞게 */
+    margin: 2rem auto; /* 위아래 간격 */
+}
+
+/* 버튼 스타일 */
+.findOutButton {
+    background-color: white; /* 버튼 배경색 */
+    color: black; /* 텍스트 색상 */
+    font-size: 2rem; /* 글씨 크기 */
+    font-weight: 600; /* 글씨 굵기 */
+    padding: 1rem 2rem; /* 버튼 내부 여백 */
+    border: none; /* 테두리 제거 */
+    border-radius: 10px; /* 둥근 테두리 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* 그림자 효과 */
+    cursor: pointer; /* 커서 모양 변경 */
+    transition: all 0.3s ease; /* 애니메이션 효과 */
+}
+
+/* 버튼 호버 효과 */
+.findOutButton:hover {
+    background-color: #007bff; /* 배경색 조금 어둡게 */
+    color: white;
+    transform: scale(1.05); /* 버튼 크기 살짝 확대 */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25); /* 그림자 강화 */
+}
+
+/* 버튼 활성화(클릭 시) 효과 */
+.findOutButton:active {
+    background-color: #004080; /* 더 어두운 색상 */
+    transform: scale(0.98); /* 살짝 눌리는 효과 */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2); /* 그림자 축소 */
+}
+
+.findOut span {
+    color: #007bff;
+}
