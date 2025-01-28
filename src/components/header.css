@@ -1,3 +1,16 @@
+
+@font-face {
+    font-family: 'NanumHumanTTFBold';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2501-1@1.1/NanumHumanTTFBold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+*{
+    font-family: "NanumHumanTTFBold";
+}
+
 a{
     text-decoration: none;
     color: black;
@@ -20,8 +33,14 @@ a:visited {
 }
 
 .headerGoto {
+    font-family: "NanumHumanTTFBold";
     display: flex;
     gap: 2vw; /* 링크 간격 조정 */
     margin-left: auto; /* 오른쪽으로 붙이기 */
     padding-right: 2vw;
+}
+
+.headerGoto h1 {
+    font-family: "NanumHumanTTFBold";
+    font-size: 1.4vw;
 }

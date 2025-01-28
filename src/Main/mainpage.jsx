@@ -17,55 +17,42 @@ function MainPage() {
   const phraseRef = useRef(null);
   const keyvalueData = [
     {
-      detail: "팀워크"
+      detail: "팀워크",
     },
     {
-      detail: "자유롭고 편한 소통"
+      detail: "자유롭고 편한 소통",
     },
     {
-      detail: "많은 실전 경험"
+      detail: "많은 실전 경험",
     },
     {
-      detail: "실패를 즐기는"
+      detail: "실패를 즐기는",
     },
     {
-      detail: "지속적인 혁신"
+      detail: "지속적인 혁신",
     },
     {
-      detail: "깊은 신뢰"
+      detail: "깊은 신뢰",
     },
-  ]
+  ];
   const achievementsData = [
     {
       year: 2024,
       details: [
         { rank: "1위", description: "비즈쿨 우수창업동아리" },
-        {
-          rank: "2위",
-          description: "Junction Asia Apple Developer Academy@POSTECH track",
-        },
+        { rank: "2위", description: "Junction Asia" },
         { rank: "대상", description: "레드브릭 게임개발대회" },
-        { rank: "대상", description: "한국코드페어 SW 공모전" },
-        { rank: "대상", description: "2024 데이터 크리에이터캠프" },
-        { rank: "동상", description: "경기 상업교육페스티벌 취업설계 PT" },
-        {
-          rank: "동상",
-          description: "전국 고등학교 동아리 소프트웨어 경진대회",
-        },
-        { rank: "우수상", description: "2024 스마틴 앱 챌린지" },
-        { rank: "우수상", description: "한양대 에리카 2024 고교창업경진대회" },
-        {
-          rank: "장려상",
-          description: "대구 데이터분석 경진대회 데이터 시각화 부문",
-        },
+        { rank: "대상", description: "한국코드페어" },
+        { rank: "대상", description: "데이터 크리에이터캠프" },
+        { rank: "우수상", description: "STA+C" },
+        { rank: "우수상", description: "한양대 에리카 고교창업경진대회" },
       ],
     },
     {
       year: 2023,
       details: [
         { rank: "1위", description: "비즈쿨 우수창업동아리" },
-        { rank: "우수상", description: "세종시 공공데이터 활용 창업경진대회" },
-        { rank: "금상", description: "벤처창업아이템 경진대회" },
+        { rank: "금상", description: "벤처창업아이템경진대회" },
         { rank: "특별상", description: "공개 SW 개발자 대회" },
       ],
     },
@@ -78,30 +65,49 @@ function MainPage() {
     },
   ];
 
-  const [randomAchievement, setRandomAchievement] = useState(getRandomAchievement);
+  const [randomAchievement, setRandomAchievement] =
+    useState(getRandomAchievement);
   const [randomValue, setRandomValue] = useState(getRandomValue);
   function getRandomValue() {
-    const randomValue = keyvalueData[Math.floor(Math.random() * keyvalueData.length)];
+    const randomValue =
+      keyvalueData[Math.floor(Math.random() * keyvalueData.length)];
     return `${randomValue.detail}`; // 'detail' 속성을 반환하도록 수정
   }
-  
 
-  function getRandomAchievement() {
-    const randomYear =
-      achievementsData[Math.floor(Math.random() * achievementsData.length)];
-    const randomDetail = 
-      randomYear.details[Math.floor(Math.random() * randomYear.details.length)];
-    return `${randomYear.year}년 ${randomDetail.description} ${randomDetail.rank}`;
+  // getRandomValue 함수 수정
+  function getRandomValue(previousValue) {
+    let randomValue;
+    do {
+      randomValue =
+        keyvalueData[Math.floor(Math.random() * keyvalueData.length)].detail;
+    } while (randomValue === previousValue); // 이전 값과 같으면 다시 뽑기
+    return randomValue;
   }
 
+  // getRandomAchievement 함수 수정
+  function getRandomAchievement(previousAchievement) {
+    let randomAchievement;
+    do {
+      const randomYear =
+        achievementsData[Math.floor(Math.random() * achievementsData.length)];
+      const randomDetail =
+        randomYear.details[
+          Math.floor(Math.random() * randomYear.details.length)
+        ];
+      randomAchievement = `${randomYear.year}년 ${randomDetail.description} ${randomDetail.rank}`;
+    } while (randomAchievement === previousAchievement); // 이전 값과 같으면 다시 뽑기
+    return randomAchievement;
+  }
+
+  // useEffect 수정
   useEffect(() => {
     const interval = setInterval(() => {
-      setRandomAchievement(getRandomAchievement());
-      setRandomValue(getRandomValue());
-    }, 3000); // 3초마다 새로운 실적을 보여줌
-
+      setRandomAchievement((prev) => getRandomAchievement(prev));
+      setRandomValue((prev) => getRandomValue(prev));
+    }, 3000); // 3초마다 새로운 값
     return () => clearInterval(interval);
   }, []);
+
   // ArrowBottom 클릭 시 실행되는 함수
   const scrollToPhrase = () => {
     phraseRef.current.scrollIntoView({
@@ -170,7 +176,7 @@ function MainPage() {
           <div className="introduceSummary">
             <h2>임플루드 소개</h2>
             <p>
-              임플루드는 2015년부터 상상을 현실로 바꿔오는 일을 했습니다
+              임플루드는 2015년부터 상상을 현실로 바꿔오는 일을 했습니다.
               <br />
               오늘도 우리의 상상이 세상을 바꿀 수 있도록, <br />
               임플루드는 오늘도 달리고 있습니다.
@@ -185,7 +191,11 @@ function MainPage() {
             >
               <p>{randomValue}</p>
             </motion.div>
-            <Link to="/introduce" className="link-button" onClick={handleLinkClick}>
+            <Link
+              to="/introduce"
+              className="link-button"
+              onClick={handleLinkClick}
+            >
               임플루드의 핵심가치 알아보기!
             </Link>
           </div>
@@ -194,7 +204,7 @@ function MainPage() {
           <div className="achievementSummary">
             <h2>임플루드 실적</h2>
             <p>
-              임플루드는 2015년부터 꾸준히 좋은 성과를 이뤄냈습니다 <br />
+              임플루드는 2015년부터 꾸준히 좋은 성과를 이뤄냈습니다. <br />
               2023년, 2024년 2년 연속 비즈쿨 우수 창업동아리 1위를 하며, <br />
               디미고 최고 창업동아리의 명성을 이어나가고 있습니다.
             </p>
@@ -209,7 +219,11 @@ function MainPage() {
             >
               <p>{randomAchievement}</p>
             </motion.div>
-            <Link to="/achievement" className="link-button" onClick={handleLinkClick}>
+            <Link
+              to="/achievement"
+              className="link-button"
+              onClick={handleLinkClick}
+            >
               임플루드의 실적 알아보기!
             </Link>
           </div>
