@@ -1,68 +1,134 @@
 .ideal-container {
-    display: flex;
-    flex-direction: column;
-    max-width: 200vw; /* 1200px 대신 90vw로 변경 */
-    margin: 0 auto;
-    padding: 4vw 2vw; /* 40px 20px 대신 4vw 2vw로 변경 */
-    font-family: 'Roboto', sans-serif;
-    text-align: center;
-    justify-self: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
+  padding: 4vw 2vw;
+  text-align: center;
+  justify-self: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 1s ease-out;
+}
+
+/* 배경 효과 추가 */
+.ideal-container::before {
+  content: "";
+  position: absolute;
+  top: -10%;
+  width: 100%;
+  height: 100vw;
+  background: radial-gradient(farthest-corner, rgba(0, 123, 255, 0.2), transparent);
+  z-index: -1;
+}
+
+.ideal-title {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 4vw;
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+/* 카드 컨테이너 */
+.ideal-values {
+  gap: 3vw;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 80vw;
+}
+
+/* 카드 개별 스타일 */
+.value-item {
+  background-color: #f9f9f9;
+  padding: 2rem 1.5rem;
+  border-radius: 1.2vw;
+  box-shadow: 0 0.4vw 1vw rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  width: 35vw;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUp 1s ease-out forwards;
+  height: 19vw;
+}
+
+/* 카드가 번갈아 가면서 등장 */
+.value-item:nth-child(odd) {
+  animation-delay: 0.3s;
+}
+.value-item:nth-child(even) {
+  animation-delay: 0.5s;
+}
+
+/* 호버 효과 */
+.value-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0.6vw 1.5vw rgba(0, 0, 0, 0.15);
+}
+
+/* 제목 스타일 */
+.value-item h2 {
+  font-size: 2.3rem;
+  font-weight: 600;
+  color: #007bff;
+  margin-bottom: 2vw;
+}
+
+/* 설명 스타일 */
+.value-item span {
+  font-size: 1.5rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* 아이콘 스타일 */
+.icon {
+  width: 3rem;
+  height: 3rem;
+  background-color: #007bff;
+  border-radius: 50%;
+  margin-bottom: 0.5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: white;
+}
+
+.icon::after {
+  content: "💡";
+}
+
+/* 애니메이션 정의 */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
   }
-  
-  .ideal-title {
-    font-size: 3rem; /* 6vw 대신 3rem로 원래대로 유지 */
-    font-weight: 700;
-    color: #333;
-    margin-bottom: 4vw; /* 40px 대신 4vw로 변경 */
+  to {
+      opacity: 1;
   }
-  
-  .ideal-values {
-    gap: 3vw; /* 30px 대신 3vw로 변경 */
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+}
+
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
   }
-  
-  .value-item {
-    background-color: #f9f9f9;
-    padding: 2rem 1.5rem; /* 4vw 3vw 대신 2rem 1.5rem으로 원래대로 유지 */
-    border-radius: 1.2vw; /* 12px 대신 1.2vw로 변경 */
-    box-shadow: 0 0.4vw 1vw rgba(0, 0, 0, 0.1); /* 4px 10px 대신 vw로 변경 */
-    transition: all 0.3s ease;
-    max-width: 65vw;
+  to {
+      opacity: 1;
+      transform: translateY(0);
   }
-  
-  .value-item:hover {
-    box-shadow: 0 0.6vw 1.5vw rgba(0, 0, 0, 0.15); /* 6px 15px 대신 vw로 변경 */
+}
+
+@keyframes slideUp {
+  from {
+      opacity: 0;
+      transform: translateY(30px);
   }
-  
-  .value-item h2 {
-    font-size: 1.8rem; /* 4vw 대신 1.8rem으로 원래대로 유지 */
-    font-weight: 600;
-    color: #007bff;
-    margin-bottom: 2vw; /* 20px 대신 2vw로 변경 */
+  to {
+      opacity: 1;
+      transform: translateY(0);
   }
-  
-  .value-item span {
-    font-size: 1.2rem; /* 3vw 대신 1.2rem으로 원래대로 유지 */
-    color: #555;
-    line-height: 1.6;
-  }
-  
-  .icon {
-    width: 3rem; /* 5vw 대신 3rem으로 원래대로 유지 */
-    height: 3rem; /* 5vw 대신 3rem으로 원래대로 유지 */
-    background-color: #007bff;
-    border-radius: 50%;
-    margin-bottom: 2vw; /* 20px 대신 2vw로 변경 */
-    display: inline-block;
-  }
-  
-  /* 아이콘에 맞는 추가 스타일링 */
-  .value-item .icon::after {
-    content: "💡"; /* 아이콘을 텍스트로 설정 */
-    font-size: 2rem; /* 4vw 대신 2rem으로 원래대로 유지 */
-    color: white;
-    text-align: center;
-    line-height: 3rem; /* 높이와 맞춰주기 위해 line-height 설정 */
-  }
+}

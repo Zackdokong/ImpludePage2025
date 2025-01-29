@@ -1,53 +1,79 @@
 /* introduceWrapper 스타일 */
 .introduceWrapper {
     display: flex;
-    flex-direction: column; /* 가로로 배치 */
-    align-items: center; /* 세로 중앙 정렬 */
-    justify-content: flex-start; /* 왼쪽 정렬 */
-    padding: 4vw 2rem; /* 여백 */
-    background-color: white; /* 배경색 */
-    color: #333; /* 텍스트 색상 */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 4vw 2rem;
+    background-color: white;
+    color: #333;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     margin: 5vw 0;
-    text-align: left; /* 텍스트 왼쪽 정렬 */
-    gap: 2rem; /* 이미지와 텍스트 간격 */
+    text-align: left;
+    gap: 2rem;
     margin-top: 0;
 }
-.Ment{
+
+.Ment {
     display: flex;
 }
+
 /* 제목 스타일 */
 .introduceWrapper h1 {
     font-size: 4rem;
     font-weight: 600;
-    color: black; /* 제목 색상 */
+    color: black;
     padding-top: 0;
     margin-top: 0;
 }
 
-/* Vision 이미지 스타일 */
-.Vision {
-    width: 100vw;
-    max-width: 1000px; /* 이미지 크기 제한 */
-    height: 100%;
-    border-radius: 10px; /* 이미지 테두리 둥글게 */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 이미지 그림자 */
-    margin-right: 2rem; /* 이미지와 텍스트 사이 간격 */
+/* Vision 이미지 스타일 - 확대 효과 */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
-/* OgleMent 텍스트 스타일 */
+.Vision {
+    width: 100vw;
+    max-width: 1000px;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-right: 2rem;
+    animation: fadeInScale 1s ease-out;
+}
+
+/* OgleMent 텍스트 - 왼쪽에서 슬라이드 */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 .OgleMent {
     font-size: 1.5rem;
     font-weight: 400;
     line-height: 1.8;
-    color: #555; /* 텍스트 색상 */
-    width: 60%; /* 텍스트 너비 설정 */
-    max-width: 600px; /* 텍스트의 최대 너비 */
+    color: #555;
+    width: 60%;
+    max-width: 600px;
+    animation: slideInLeft 1s ease-out;
 }
 
 /* 텍스트에서 강조 부분 스타일 */
 .OgleMent br {
-    margin-bottom: 1.5rem; /* 각 문단 사이 간격 */
+    margin-bottom: 1.5rem;
 }
 
 /* 전체 래퍼 스타일 */
@@ -71,32 +97,46 @@
 /* 내용 전체 묶음 */
 .valueMent {
     display: flex;
-    flex-wrap: wrap; /* 여러 줄로 배치 */
-    justify-content: center; /* 중앙 정렬 */
-    gap: 2rem; /* 요소 간 간격 */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
 }
 
 /* 각각의 가치 영역 */
 .valueMent div {
-    width: 100%; /* 기본적으로 전체 너비 사용 */
-    max-width: 450px; /* 카드의 최대 너비 */
+    width: 100%;
+    max-width: 450px;
     background-color: white;
     padding: 2rem;
     border-radius: 15px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    text-align: left; /* 텍스트 왼쪽 정렬 */
-    line-height: 1.8; /* 줄 간격 */
+    text-align: left;
+    line-height: 1.8;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid gray;
 }
 
-/* 핵심 주제 스타일 */
+/* 핵심가치 카드 - 마우스 호버 시 흔들리는 효과 */
+@keyframes shake {
+    0% { transform: rotate(0); }
+    25% { transform: rotate(1.5deg); }
+    50% { transform: rotate(-1.5deg); }
+    75% { transform: rotate(1deg); }
+    100% { transform: rotate(0); }
+}
+
+.valueMent div:hover {
+    animation: shake 0.4s ease-in-out;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
 .theme {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #037AFF;
-    display: block; /* 제목을 별도 줄에 배치 */
+    display: block;
     margin-bottom: 1rem;
+    color: #007bff;
 }
 
 /* 세부 내용 스타일 */
