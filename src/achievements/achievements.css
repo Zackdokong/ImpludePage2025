@@ -96,7 +96,9 @@
     padding: 20px;
     width: 50vw;
     text-align: left;
-    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.6s ease-out forwards;
 }
   
 .achievement-card:hover {
@@ -120,4 +122,46 @@
     color:#007bff;
     font-weight: 900;
     font-size: 1.7rem;
+}
+
+.achievement-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+.achievement-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.achievement-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+.achievement-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+.achievement-card:nth-child(5) {
+    animation-delay: 0.5s;
+}
+.achievement-card:nth-child(6) {
+    animation-delay: 0.6s;
+}
+.achievement-card:nth-child(7) {
+    animation-delay: 0.7s;
+}
+.achievement-card:nth-child(8) {
+    animation-delay: 0.8s;
+}
+.achievement-card:nth-child(9) {
+    animation-delay: 0.9s;
+}
+.achievement-card:nth-child(10) {
+    animation-delay: 1s;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
