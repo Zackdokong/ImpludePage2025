@@ -1,3 +1,7 @@
+.impludeBanner {
+    width: 100%;
+}
+
 /* introduceWrapper 스타일 */
 .introduceWrapper {
     display: flex;

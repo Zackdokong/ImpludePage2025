@@ -3,6 +3,7 @@ import Header from "../components/header";
 import "./member.css";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Banner from "../assets/ImpludeBanner.png";
 
 export default function Member() {
   const [activeTab, setActiveTab] = useState("23기");
@@ -49,6 +50,7 @@ export default function Member() {
   return (
     <>
       <Header />
+      <img className="impludeBanner" src={Banner} />
       <div className="memberWrapper">
         <h1>동아리원 소개</h1>
         <hr />

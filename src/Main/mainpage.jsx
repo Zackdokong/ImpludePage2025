@@ -7,6 +7,7 @@ import styled, { keyframes } from "styled-components";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import "./mainpage.css";
+import Banner from "../assets/ImpludeBanner.png";
 
 function MainPage() {
   const handleLinkClick = (path) => {
@@ -45,7 +46,6 @@ function MainPage() {
         { rank: "대상", description: "한국코드페어" },
         { rank: "대상", description: "데이터 크리에이터캠프" },
         { rank: "우수상", description: "STA+C" },
-        { rank: "우수상", description: "한양대 에리카 고교창업경진대회" },
       ],
     },
     {
@@ -171,6 +171,7 @@ function MainPage() {
             <span className="PhraseBlue">E</span>AM
           </div>
         </div>
+        <img className="impludeBanner" src={Banner} />
         <div className="summary-wrapper">
           {/* 임플루드 소개 */}
           <div className="introduceSummary">

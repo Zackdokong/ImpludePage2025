@@ -1,3 +1,7 @@
+.impludeBanner {
+    width: 100%;
+}
+
 @font-face {
     font-family: 'PyeongChang-Bold';
     src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChang-Bold.woff2') format('woff2');
