@@ -17,7 +17,7 @@ export default function Member() {
     {
       name: "이승준",
       role: "App, FE developer",
-      bio: "임플루드에서 앱, FE 개발을 맡고 있는 이승준입니다!",
+      bio: "임플루드에서 앱, 프론트엔드를 담당하는 이승준입니다!",
     },
     {
       name: "박은빈",
