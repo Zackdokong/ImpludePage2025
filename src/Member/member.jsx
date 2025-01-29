@@ -8,7 +8,7 @@ export default function Member() {
   const [activeTab, setActiveTab] = useState("23기");
 
   const tenth = [
-    { name: "김민찬", role: "포지션", bio: "한줄소개" },
+    { name: "김민찬", role: "창업동아리장,FE", bio: "프론트뿐만 아니라 다양한 분야에 관심갖고 있는 임플루드의 동장, 김민찬입니다!" },
     {
       name: "이지민",
       role: "포지션",
@@ -17,7 +17,7 @@ export default function Member() {
     {
       name: "이승준",
       role: "App, FE developer",
-      bio: "한줄소개",
+      bio: "임플루드에서 앱, FE 개발을 맡고 있는 이승준입니다!",
     },
     {
       name: "박은빈",
@@ -31,8 +31,8 @@ export default function Member() {
     },
     {
       name: "최현서",
-      role: "포지션",
-      bio: "한줄소개",
+      role: "AI",
+      bio: "임플루드에서 AI 개발을 담당하는 최현서입니다!",
     },
     {
       name: "전소현",
