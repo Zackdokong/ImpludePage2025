@@ -1,5 +1,5 @@
-import { useRef, useState, useEffect, useMemo } from "react"; // useMemo 추가
-import { motion } from "framer-motion"; // 애니메이션 라이브러리 추가
+import { useRef, useState, useEffect, useMemo } from "react";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import ImpludeLogo from "../assets/implude.svg";
 import ArrowBottom from "../assets/arrow_bottom.svg";
@@ -12,7 +12,7 @@ import Banner from "../assets/ImpludeBanner.png";
 function MainPage() {
   const handleLinkClick = (path) => {
     navigate(path);
-    window.scrollTo(0, 0); // 페이지 맨 위로 스크롤
+    window.scrollTo(0, 0);
   };
 
   const phraseRef = useRef(null);
@@ -71,20 +71,18 @@ function MainPage() {
   function getRandomValue() {
     const randomValue =
       keyvalueData[Math.floor(Math.random() * keyvalueData.length)];
-    return `${randomValue.detail}`; // 'detail' 속성을 반환하도록 수정
+    return `${randomValue.detail}`;
   }
 
-  // getRandomValue 함수 수정
   function getRandomValue(previousValue) {
     let randomValue;
     do {
       randomValue =
         keyvalueData[Math.floor(Math.random() * keyvalueData.length)].detail;
-    } while (randomValue === previousValue); // 이전 값과 같으면 다시 뽑기
+    } while (randomValue === previousValue);
     return randomValue;
   }
 
-  // getRandomAchievement 함수 수정
   function getRandomAchievement(previousAchievement) {
     let randomAchievement;
     do {
@@ -95,11 +93,10 @@ function MainPage() {
           Math.floor(Math.random() * randomYear.details.length)
         ];
       randomAchievement = `${randomYear.year}년 ${randomDetail.description} ${randomDetail.rank}`;
-    } while (randomAchievement === previousAchievement); // 이전 값과 같으면 다시 뽑기
+    } while (randomAchievement === previousAchievement);
     return randomAchievement;
   }
 
-  // useEffect 수정
   useEffect(() => {
     const interval = setInterval(() => {
       setRandomAchievement((prev) => getRandomAchievement(prev));
@@ -108,11 +105,10 @@ function MainPage() {
     return () => clearInterval(interval);
   }, []);
 
-  // ArrowBottom 클릭 시 실행되는 함수
   const scrollToPhrase = () => {
     phraseRef.current.scrollIntoView({
       behavior: "smooth", // 부드럽게 스크롤
-      block: "center", // 요소의 시작 부분이 화면 상단에 맞춰짐
+      block: "center",
     });
   };
 
@@ -183,7 +179,7 @@ function MainPage() {
               임플루드는 오늘도 달리고 있습니다.
             </p>
             <motion.div
-              key={randomValue} // 실적이 변경될 때마다 애니메이션을 새로 시작하게 합니다.
+              key={randomValue}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -211,7 +207,7 @@ function MainPage() {
             </p>
             {/* 랜덤 실적 보여주기 */}
             <motion.div
-              key={randomAchievement} // 실적이 변경될 때마다 애니메이션을 새로 시작하게 합니다.
+              key={randomAchievement}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
