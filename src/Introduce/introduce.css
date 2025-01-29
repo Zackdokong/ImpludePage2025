@@ -1,3 +1,15 @@
+@font-face {
+    font-family: 'KCC-Ganpan';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/KCC-Ganpan.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'yg-jalnan';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 .impludeBanner {
     width: 100%;
 }
@@ -66,13 +78,14 @@
 }
 
 .OgleMent {
-    font-size: 1.5rem;
-    font-weight: 400;
+    font-size: 1.55rem;
+    font-weight: 900;
     line-height: 1.8;
-    color: #555;
+    color: #333;
     width: 60%;
     max-width: 600px;
     animation: slideInLeft 1s ease-out;
+    font-family: 'KCC-Ganpan';
 }
 
 /* 텍스트에서 강조 부분 스타일 */
@@ -109,7 +122,7 @@
 /* 각각의 가치 영역 */
 .valueMent div {
     width: 100%;
-    max-width: 450px;
+    max-width: 27vw;
     background-color: white;
     padding: 2rem;
     border-radius: 15px;
@@ -123,8 +136,8 @@
 /* 핵심가치 카드 - 마우스 호버 시 흔들리는 효과 */
 @keyframes shake {
     0% { transform: rotate(0); }
-    25% { transform: rotate(1.5deg); }
-    50% { transform: rotate(-1.5deg); }
+    25% { transform: rotate(1deg); }
+    50% { transform: rotate(-1deg); }
     75% { transform: rotate(1deg); }
     100% { transform: rotate(0); }
 }
@@ -136,16 +149,18 @@
 }
 
 .theme {
-    font-size: 2.5rem;
+    font-size: 2.7rem;
     font-weight: 700;
     display: block;
     margin-bottom: 1rem;
     color: #007bff;
+    font-family: 'yg-jalnan';
 }
 
 /* 세부 내용 스타일 */
 .detail {
-    font-size: 1.2rem;
-    color: #555;
+    font-size: 1.3rem;
+    color: black;
     font-weight: 400;
+    font-family: 'yg-jalnan';
 }

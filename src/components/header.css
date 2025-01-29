@@ -44,3 +44,8 @@ a:visited {
     font-family: "NanumHumanTTFBold";
     font-size: 1.4vw;
 }
+
+.headerGoto h1:hover{
+    color: #007bff;
+    transform: translateY(-1px);
+}
