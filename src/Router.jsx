@@ -5,6 +5,7 @@ import Introduce from './Introduce/introducePage'
 import Member from "./Member/member";
 import Ideal from "./ideal/ideal";
 import Achievement from "./achievements/achievements";
+import RecruitPage from "./Member/recruit";
 
 function Router() {
     return (
@@ -14,6 +15,7 @@ function Router() {
             <Route path="/member" element={<Member />} />
             <Route path="/ideal" element={<Ideal />}/>
             <Route path="/achievement" element={<Achievement />}/>
+            <Route path="/test" element={<RecruitPage />}/>
         </Routes>
     );
 }

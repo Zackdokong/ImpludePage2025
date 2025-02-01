@@ -8,7 +8,7 @@
 
 
 *{
-    font-family: "NanumHumanTTFBold";
+    font-family: 'SBAggroB';
 }
 
 a{
@@ -20,6 +20,13 @@ a:visited {
     color: inherit; /* 방문 후에도 색상이 바뀌지 않도록 설정 */
 }
 
+@font-face {
+    font-family: 'SBAggroB';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .header {
     display: flex;
     border-bottom: 1px solid black;
@@ -29,6 +36,7 @@ a:visited {
 }
 
 .title h1 {
+    font-family: 'SBAggroB';
     margin-left: 2vw;
 }
 
@@ -42,7 +50,7 @@ a:visited {
 
 .headerGoto h1 {
     font-family: "NanumHumanTTFBold";
-    font-size: 1.4vw;
+    font-size: 1.4vw !important;
 }
 
 .headerGoto h1:hover{
