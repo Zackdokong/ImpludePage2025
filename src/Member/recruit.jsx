@@ -14,9 +14,10 @@ import {
   Detail,
   RecruitText,
 } from "../components/atomic";
-import Header from '../components/header';
-import Footer from '../components/footer';
+import Header from "../components/header";
+import Footer from "../components/footer";
 import RecruitBanner from "../assets/RecruitBanner.jpg";
+import "./recruit.css";
 
 function Intro() {
   const applyProcess = [
@@ -36,7 +37,7 @@ function Intro() {
           임플루드와 함께하기로 결정하셨다면, 임플루드 합류 여정을
           소개해드릴게요!
         </Header2>
-        <Row justify="left" style={{ marginLeft: "-3rem" }} gap="1.2rem">
+        <Row justify="left" style={{ marginLeft: "-1rem" }} gap="1.2rem">
           {applyProcess.map((process, i) => (
             <TitleCircle
               key={i}
@@ -452,14 +453,16 @@ export default function RecruitPage() {
   return (
     <>
       <Header />
-      <BannerImage src={RecruitBanner} />
-      <Col margin="0 7.5rem" align="flex-start">
-        <Col gap="15rem" margin="13.75rem auto" width="100%">
-          <Intro />
-          <Process />
-          <PartDetail />
+      <div className="recruitPage">
+        <BannerImage src={RecruitBanner} />
+        <Col margin="0 7.5rem" align="flex-start">
+          <Col gap="15rem" margin="13.75rem auto" width="100%">
+            <Intro />
+            <Process />
+            <PartDetail />
+          </Col>
         </Col>
-      </Col>
+      </div>
       <Footer />
     </>
   );
@@ -471,6 +474,14 @@ const BannerImage = styled.img`
 `;
 
 const TitleCircle = styled.div`
+  font-family: "BMJUA" !important;
+  @font-face {
+    font-family: "BMJUA";
+    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff")
+      format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
   display: flex;
   flex-basis: 11vw;
   flex-shrink: 0;
@@ -499,6 +510,15 @@ const CircleText = styled(Header2)`
     font-size: 1.5rem;
     box-sizing: border-box;
     padding-right: 1rem;
+  }
+
+  font-family: "BMJUA" !important;
+  @font-face {
+    font-family: "BMJUA";
+    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff")
+      format("woff");
+    font-weight: normal;
+    font-style: normal;
   }
 `;
 
@@ -530,6 +550,14 @@ const PartButton = styled.button`
 
 const RecruitTitle = styled(Title)`
   font-size: 3rem;
+  font-family: "BMJUA" !important;
+  @font-face {
+    font-family: "BMJUA";
+    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff")
+      format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
 `;
 
 function Part({ title, descriptions }) {

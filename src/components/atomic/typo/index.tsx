@@ -31,6 +31,15 @@ export const Title = styled(TypoRef)`
   font-style: normal;
   font-weight: ${(p) => (p.$bold ? "900" : "700")};
   line-height: 4.75rem;
+
+  font-family: "BMJUA" !important;
+  @font-face {
+    font-family: "BMJUA";
+    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff")
+      format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
 `;
 
 export const Header1 = styled(TypoRef)`
@@ -47,10 +56,28 @@ export const Header2 = styled(TypoRef)`
   font-style: normal;
   font-weight: 500;
   line-height: 2.813rem;
+
+  font-family: "BMJUA" !important;
+  @font-face {
+    font-family: "BMJUA";
+    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff")
+      format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
 `;
 
 export const Description = styled(TypoRef)`
   font-size: 2rem;
+
+  font-family: "BMJUA" !important;
+  @font-face {
+    font-family: "BMJUA";
+    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff")
+      format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
 `;
 
 export const Detail = styled(TypoRef)`
@@ -58,6 +85,15 @@ export const Detail = styled(TypoRef)`
   font-style: normal;
   font-weight: 500;
   line-height: 1.813rem;
+
+  font-family: "BMJUA" !important;
+  @font-face {
+    font-family: "BMJUA";
+    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff")
+      format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
 `;
 
 export const RecruitText = styled(TypoRef)<{
@@ -70,6 +106,24 @@ export const RecruitText = styled(TypoRef)<{
   li {
     text-indent: -3rem;
     margin-left: 3rem;
+
+    font-family: "BMJUA" !important;
+    @font-face {
+      font-family: "BMJUA";
+      src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff")
+        format("woff");
+      font-weight: normal;
+      font-style: normal;
+    }
   }
   line-height: 167%;
+
+  font-family: "BMJUA" !important;
+  @font-face {
+    font-family: "BMJUA";
+    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff")
+      format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
 `;
