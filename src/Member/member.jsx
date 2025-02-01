@@ -9,7 +9,11 @@ export default function Member() {
   const [activeTab, setActiveTab] = useState("23기");
 
   const tenth = [
-    { name: "김민찬", role: "창업동아리장,FE", bio: "프론트뿐만 아니라 다양한 분야에 관심갖고 있는 임플루드의 동장, 김민찬입니다!" },
+    {
+      name: "김민찬",
+      role: "창업동아리장,FE Developer",
+      bio: "FE뿐만 아니라 다양한 분야에 관심갖고 있는 임플루드의 창동장, 김민찬입니다!",
+    },
     {
       name: "이지민",
       role: "포지션",
@@ -17,8 +21,8 @@ export default function Member() {
     },
     {
       name: "이승준",
-      role: "App, FE developer",
-      bio: "임플루드에서 앱, 프론트엔드를 담당하는 이승준입니다!",
+      role: "App, FE Developer",
+      bio: "임플루드에서 App과 FE개발을 담당하고 있는 이승준입니다!",
     },
     {
       name: "박은빈",
@@ -27,8 +31,8 @@ export default function Member() {
     },
     {
       name: "김소은",
-      role: "포지션",
-      bio: "한줄소개",
+      role: "FE Developer",
+      bio: "배우고 만들고 나아갑니다.",
     },
     {
       name: "최현서",
@@ -42,7 +46,7 @@ export default function Member() {
     },
     {
       name: "이연준",
-      role: "DevOps, Backend-Engineer",
+      role: "DevOps, BE Engineer",
       bio: "SWA를 꿈꾸는 백엔드 엔지니어, 이연준입니다!",
     },
   ]; //임플루드 10기 데이터
@@ -79,8 +83,11 @@ export default function Member() {
             ))}
         </div>
         {activeTab === "24기" && (
-          <Link className="findOut" to=""> {/*여기에 서핑 링크 넣어야함*/}
-            <h1>지금은 11기 <span>임플루드</span> 동아리원을 <span>모집</span>중이에요!</h1>
+          <Link className="findOut" to="../recruit">
+            <h1>
+              지금은 11기 <span>임플루드</span> 동아리원을 <span>모집</span>
+              중이에요!
+            </h1>
             <button className="findOutButton">임플루드 지원하러가기!</button>
           </Link>
         )}

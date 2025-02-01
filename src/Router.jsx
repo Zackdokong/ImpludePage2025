@@ -15,7 +15,7 @@ function Router() {
             <Route path="/member" element={<Member />} />
             <Route path="/ideal" element={<Ideal />}/>
             <Route path="/achievement" element={<Achievement />}/>
-            <Route path="/test" element={<RecruitPage />}/>
+            <Route path="/recruit" element={<RecruitPage />}/>
         </Routes>
     );
 }
