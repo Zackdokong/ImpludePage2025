@@ -2,7 +2,12 @@
     font-family: 'SBAggroB'; /* 폰트 찾았는데 개구림 바꿔야할듯 */
     text-decoration: none;
 }
-
+.PageWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 a{
     text-decoration: none;
 }

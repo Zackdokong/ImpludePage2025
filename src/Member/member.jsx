@@ -26,8 +26,8 @@ export default function Member() {
     },
     {
       name: "박은빈",
-      role: "포지션",
-      bio: "한줄소개",
+      role: "디자인",
+      bio: "몇 안 되는 23기디자이너 중 한명입니다. 임플루드에서 귀한 인맥을 낚아채세요.",
     },
     {
       name: "김소은",
@@ -54,6 +54,7 @@ export default function Member() {
   return (
     <>
       <Header />
+      <div className="PageWrapper">
       <img className="impludeBanner" src={Banner} />
       <div className="memberWrapper">
         <h1>동아리원 소개</h1>
@@ -91,6 +92,7 @@ export default function Member() {
             <button className="findOutButton">임플루드 지원하러가기!</button>
           </Link>
         )}
+      </div>
       </div>
       <Footer />
     </>

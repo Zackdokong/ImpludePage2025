@@ -25,10 +25,10 @@
     background-color: #fbfbfb;
     color: #333;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    margin: 5vw 0;
     text-align: left;
     gap: 2rem;
     margin-top: 0;
+    width: 100%;
 }
 
 .Ment {
@@ -48,7 +48,7 @@
 .Vision {
     max-width: 45vw;
     height: 100%;
-    border-radius: 2vw;
+    border-radius: 1.2vw;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     margin-right: 2rem;
     animation: fadeInScale 1s ease-out;
