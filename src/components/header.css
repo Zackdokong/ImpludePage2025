@@ -36,7 +36,7 @@ a:visited {
 }
 
 .title h1 {
-    font-family: 'SBAggroB';
+    font-family: 'SBAggroB' !important;
     margin-left: 2vw;
 }
 
