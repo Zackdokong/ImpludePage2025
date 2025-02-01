@@ -15,6 +15,7 @@ const achievementsData = [
       { rank: "대상", description: "레드브릭 게임개발대회" },
       { rank: "대상", description: "한국코드페어 SW 공모전" },
       { rank: "대상", description: "2024 데이터 크리에이터캠프" },
+      { rank: "금상", description: "전국 상업경진대회 취업설계 PT" },
       { rank: "동상", description: "경기 상업교육페스티벌 취업설계 PT" },
       { rank: "동상", description: "전국 고등학교 동아리 소프트웨어 경진대회" },
       { rank: "우수상", description: "2024 스마틴 앱 챌린지" },
