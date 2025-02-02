@@ -11,12 +11,12 @@ export default function Member() {
   const tenth = [
     {
       name: "김민찬",
-      role: "창업동아리장,FE Developer",
+      role: "창업동아리장, FE Developer",
       bio: "FE뿐만 아니라 다양한 분야에 관심갖고 있는 임플루드의 창동장, 김민찬입니다!",
     },
     {
       name: "이지민",
-      role: "포지션",
+      role: "AI, BE Developer",
       bio: "한줄소개",
     },
     {
@@ -41,8 +41,8 @@ export default function Member() {
     },
     {
       name: "전소현",
-      role: "포지션",
-      bio: "한줄소개",
+      role: "기획",
+      bio: "열심히 하겠습니다.",
     },
     {
       name: "이연준",
