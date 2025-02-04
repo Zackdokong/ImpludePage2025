@@ -1,41 +1,62 @@
-import { useRef, useState, useEffect, useMemo } from "react";
+import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ImpludeLogo from "../assets/implude.svg";
 import ArrowBottom from "../assets/arrow_bottom.svg";
-import styled, { keyframes } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import "./mainpage.css";
 import Banner from "../assets/ImpludeBanner.png";
+import { useMediaQuery } from "react-responsive";
+
+// Styled-components for messageBar
+const getAnimation = (n, isTabletOrMobile) => keyframes`
+  0% {
+    width: ${isTabletOrMobile ? `${n / 32}rem` : `${n / 24}rem`}
+  }
+  50% {
+    width: ${isTabletOrMobile ? `${n / 32}rem` : `${n / 24 + 2}rem`}
+  }
+  100% {
+    width: ${isTabletOrMobile ? `${n / 32}rem` : `${n / 24}rem`}
+  }
+`;
+
+const StyledSpan = styled.span.withConfig({
+  shouldForwardProp: (prop) => prop !== "isThin" && prop !== "animation",
+})`
+  width: ${(props) => props.width};
+  height: ${(props) => (props.isThin ? "0.5rem" : "0.7rem")};
+  background: black;
+  display: inline-block;
+  position: relative;
+  bottom: 1.5vw;
+  animation: ${(props) =>
+    css`
+      ${props.animation} 3s ease-in-out infinite
+    `};
+`;
 
 function MainPage() {
+  const navigate = useNavigate();
+  
   const handleLinkClick = (path) => {
     navigate(path);
     window.scrollTo(0, 0);
   };
 
   const phraseRef = useRef(null);
+
   const keyvalueData = [
-    {
-      detail: "팀워크",
-    },
-    {
-      detail: "자유롭고 편한 소통",
-    },
-    {
-      detail: "많은 실전 경험",
-    },
-    {
-      detail: "실패를 즐기는",
-    },
-    {
-      detail: "지속적인 혁신",
-    },
-    {
-      detail: "깊은 신뢰",
-    },
+    { detail: "팀워크" },
+    { detail: "자유롭고 편한 소통" },
+    { detail: "많은 실전 경험" },
+    { detail: "실패를 즐기는" },
+    { detail: "지속적인 혁신" },
+    { detail: "깊은 신뢰" },
   ];
+
   const achievementsData = [
     {
       year: 2024,
@@ -65,16 +86,15 @@ function MainPage() {
     },
   ];
 
-  const [randomAchievement, setRandomAchievement] =
-    useState(getRandomAchievement);
-  const [randomValue, setRandomValue] = useState(getRandomValue);
-  function getRandomValue() {
-    const randomValue =
-      keyvalueData[Math.floor(Math.random() * keyvalueData.length)];
-    return `${randomValue.detail}`;
-  }
+  const [randomAchievement, setRandomAchievement] = useState(() =>
+    getRandomAchievement()
+  );
+  
+  const [randomValue, setRandomValue] = useState(() =>
+    getRandomValue()
+  );
 
-  function getRandomValue(previousValue) {
+  function getRandomValue(previousValue = null) {
     let randomValue;
     do {
       randomValue =
@@ -83,7 +103,7 @@ function MainPage() {
     return randomValue;
   }
 
-  function getRandomAchievement(previousAchievement) {
+  function getRandomAchievement(previousAchievement = null) {
     let randomAchievement;
     do {
       const randomYear =
@@ -101,41 +121,30 @@ function MainPage() {
     const interval = setInterval(() => {
       setRandomAchievement((prev) => getRandomAchievement(prev));
       setRandomValue((prev) => getRandomValue(prev));
-    }, 3000); // 3초마다 새로운 값
+    }, 3000); // Update every 3 seconds
     return () => clearInterval(interval);
   }, []);
 
   const scrollToPhrase = () => {
     phraseRef.current.scrollIntoView({
-      behavior: "smooth", // 부드럽게 스크롤
+      behavior: "smooth",
       block: "center",
     });
   };
 
   function messageBar(n) {
-    const animation = keyframes`
-      0% {
-        width: ${`${n / 24}rem`}
-      }
-      50% {
-        width: ${`${n / 24 + 2}rem`}
-      }
-      100% {
-        width: ${`${n / 24}rem`}
-      }
-    `;
+    const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1200px)" });
+    const isBarHastobeThin = useMediaQuery({ query: "(max-width: 800px)" });
 
-    const ReturnSpan = styled.span`
-      width: ${`${n / 24}rem`};
-      height: ${"0.7rem"};
-      background: black;
-      display: inline-block;
-      position: relative;
-      bottom: 1.5vw;
-      animation: ${animation} 4s ease-in-out infinite;
-    `;
+    const animation = getAnimation(n, isTabletOrMobile);
 
-    return useMemo(() => <ReturnSpan />, [n]); // useMemo로 memoize
+    return (
+      <StyledSpan
+        width={isTabletOrMobile ? `${n / 32}rem` : `${n / 24}rem`}
+        isThin={isBarHastobeThin}
+        animation={animation}
+      />
+    );
   }
 
   return (
@@ -168,7 +177,7 @@ function MainPage() {
               <span className="PhraseBlue">E</span>AM
             </div>
           </div>
-          <img className="impludeBanner" src={Banner} />
+          <img className="impludeBanner" src={Banner} alt="Implude Banner"/>
           <div className="summary-wrapper">
             {/* 임플루드 소개 */}
             <div className="introduceSummary">
@@ -192,7 +201,7 @@ function MainPage() {
               <Link
                 to="/introduce"
                 className="link-button"
-                onClick={handleLinkClick}
+                onClick={() => handleLinkClick("/introduce")}
               >
                 임플루드의 핵심가치 알아보기!
               </Link>
@@ -202,8 +211,7 @@ function MainPage() {
             <div className="achievementSummary">
               <h2>임플루드 실적</h2>
               <p>
-                임플루드는 2015년부터 꾸준히 좋은 성과를 이뤄냈습니다. <br />
-                2023년, 2024년 2년 연속 비즈쿨 우수 창업동아리 1위를 하며,{" "}
+                임플루드는 꾸준히 좋은 성과를 이뤄냈습니다.
                 <br />
                 디미고 최고 창업동아리의 명성을 이어나가고 있습니다.
               </p>
@@ -221,7 +229,7 @@ function MainPage() {
               <Link
                 to="/achievement"
                 className="link-button"
-                onClick={handleLinkClick}
+                onClick={() => handleLinkClick("/achievement")}
               >
                 임플루드의 실적 알아보기!
               </Link>
