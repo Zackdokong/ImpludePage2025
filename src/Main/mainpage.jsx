@@ -7,7 +7,7 @@ import styled, { css, keyframes } from "styled-components";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import "./mainpage.css";
-import award from "../assets/award.png";
+import award from "../assets/award1.png";
 import { useMediaQuery } from "react-responsive";
 import Vision from "../assets/Vision.jpg";
 
@@ -192,37 +192,6 @@ function MainPage() {
             </div>
           </div>
           <div className="summary-wrapper">
-            {/*
-            <div className="introduceSummary">
-              <div className="SummaryText">
-                <h2>임플루드 소개</h2>
-                <p>
-                  임플루드는 2015년부터 상상을 현실로 바꿔오는 일을 했습니다.
-                  <br />
-                  오늘도 우리의 상상이 세상을 바꿀 수 있도록, <br />
-                  임플루드는 오늘도 달리고 있습니다.
-                </p>
-              </div>
-
-              <motion.div
-                key={randomValue}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 1 }}
-                className="random-value"
-              >
-                <p>{randomValue}</p>
-              </motion.div>
-              <Link
-                to="/introduce"
-                className="link-button"
-                onClick={() => handleLinkClick("/introduce")}
-              >
-                임플루드의 핵심가치 알아보기!
-              </Link>
-            </div>
-            */}
             {/* 임플루드 실적 */}
             <div className="achievementSummary">
               <img src={award} className="awardImage" />
