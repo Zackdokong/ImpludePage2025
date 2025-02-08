@@ -159,10 +159,6 @@ a:visited {
 
 .awardImage {
   border-radius: 5%;
-  max-width: 30vw;
-  max-height: 15vw;
-  overflow-y: hidden;
-
 }
 
 .achievementSummary h2 {
