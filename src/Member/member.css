@@ -87,9 +87,9 @@ a:visited {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 2.5rem;
     width: 17.5vw;
-    height: 12.5vw;
+    height: 17.5vw;
     max-width: 17.5vw;
-    max-height: 12.5vw;
+    max-height: 17.5vw;
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
     align-items: center;
@@ -171,3 +171,13 @@ a:visited {
 .findOut span {
     color: #007bff;
 }
+
+/* Profile Image Style */
+.profileImage {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%; /* Make it circular */
+    object-fit: cover; /* Ensure the image fits within the circle */
+    margin-bottom: 1rem; /* Add spacing below the image */
+  }
+  

@@ -2,6 +2,7 @@ import Footer from "../components/footer";
 import Header from "../components/header";
 import { useState } from "react";
 import "./achievements.css";
+import Banner from "../assets/ImpludeBanner.png";
 
 const achievementsData = [
   {
@@ -50,6 +51,7 @@ export default function Achievement() {
   return (
     <>
       <Header />
+      <img className="impludeBanner" src={Banner} alt="Implude Banner" />
       <div className="PageWrapper">
         <div className="achievement-container">
           <div className="timeline">

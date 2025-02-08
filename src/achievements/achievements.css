@@ -164,3 +164,7 @@
         transform: translateY(0);
     }
 }
+
+.impludeBanner {
+    width: 100%;
+}
