@@ -7,7 +7,6 @@ import styled, { css, keyframes } from "styled-components";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import "./mainpage.css";
-import award from "../assets/award1.png";
 import { useMediaQuery } from "react-responsive";
 import Vision from "../assets/Vision.jpg";
 
@@ -115,14 +114,18 @@ function MainPage() {
     } while (randomAchievement === previousAchievement);
     return randomAchievement;
   }
-
+  const images = Object.values(
+    import.meta.glob("../assets/award*.{png,jpg}", { eager: true })
+  ).map((module) => module.default);
+  const [currentIndex, setCurrentIndex] = useState(0);
   useEffect(() => {
     const interval = setInterval(() => {
       setRandomAchievement((prev) => getRandomAchievement(prev));
       setRandomValue((prev) => getRandomValue(prev));
+      setCurrentIndex((prev) => (prev + 1) % images.length);
     }, 3000); // Update every 3 seconds
     return () => clearInterval(interval);
-  }, []);
+  }, [images.length]);
 
   const scrollToPhrase = () => {
     phraseRef.current.scrollIntoView({
@@ -194,7 +197,16 @@ function MainPage() {
           <div className="summary-wrapper">
             {/* 임플루드 실적 */}
             <div className="achievementSummary">
-              <img src={award} className="awardImage" />
+              <motion.img
+                key={currentIndex} // key가 바뀌면 애니메이션 재실행됨
+                src={images[currentIndex]}
+                className="awardImage"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0 }}
+                alt="Award"
+              />
               <div className="achievementSummaryDetail">
                 <div className="SummaryText">
                   <h2>임플루드 실적</h2>
