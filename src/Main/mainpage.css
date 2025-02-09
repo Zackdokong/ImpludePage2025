@@ -336,3 +336,48 @@ a:visited {
   font-weight: normal;
   font-style: normal;
 }
+
+/* 슬라이더 컨테이너 */
+.slider-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 이미지 컨테이너 */
+.image-container {
+  position: relative;
+}
+
+/* 슬라이더 이미지 */
+.Vision {
+  width: 100%;
+  height: auto;
+  border-radius: 10px; /* 필요하면 추가 */
+}
+
+/* 공통 버튼 스타일 */
+.slider-button {
+  position: absolute;
+  top: 50%; /* 버튼을 이미지 중앙에 배치 */
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 5px;
+  z-index: 10;
+}
+
+/* 왼쪽 버튼 */
+.slider-button.left {
+  left: 10px; /* 왼쪽 버튼 위치 */
+}
+
+/* 오른쪽 버튼 */
+.slider-button.right {
+  right: 40px; /* 오른쪽 버튼 위치를 조정 */
+}

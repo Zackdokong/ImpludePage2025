@@ -9,7 +9,16 @@ import Footer from "../components/footer";
 import "./mainpage.css";
 import award from "../assets/award1.png";
 import { useMediaQuery } from "react-responsive";
-import Vision from "../assets/Vision.jpg";
+import YAMMY from "../assets/Project_Thumbnail/YAMMY.jpg";
+import VOAH from "../assets/Project_Thumbnail/VOAH.jpg";
+import MOLA from "../assets/Project_Thumbnail/MOLA.jpg";
+import MK1 from "../assets/Project_Thumbnail/MK1.jpg";
+import JOIN from "../assets/Project_Thumbnail/JOIN.jpg";
+import JipGaGoSipDa from "../assets/Project_Thumbnail/JipGaGoSipDa.jpg";
+import ITNun from "../assets/Project_Thumbnail/ITNun.jpg";
+import DINEON from "../assets/Project_Thumbnail/DINEON.jpg";
+import DAYCUBE from "../assets/Project_Thumbnail/DAYCUBE.jpg";
+import ASD from "../assets/Project_Thumbnail/ASD.jpg";
 
 // Styled-components for messageBar
 const getAnimation = (n, isTabletOrMobile) => keyframes`
@@ -40,6 +49,32 @@ const StyledSpan = styled.span.withConfig({
 `;
 
 function MainPage() {
+  const images = [
+    YAMMY,
+    VOAH,
+    MOLA,
+    MK1,
+    JOIN,
+    JipGaGoSipDa,
+    ITNun,
+    DINEON,
+    DAYCUBE,
+    ASD,
+  ];
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handlePrev = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
   const navigate = useNavigate();
 
   const handleLinkClick = (path) => {
@@ -119,9 +154,10 @@ function MainPage() {
     const interval = setInterval(() => {
       setRandomAchievement((prev) => getRandomAchievement(prev));
       setRandomValue((prev) => getRandomValue(prev));
+      handleNext();
     }, 3000); // Update every 3 seconds
     return () => clearInterval(interval);
-  }, []);
+  }, [currentIndex]);
 
   const scrollToPhrase = () => {
     phraseRef.current.scrollIntoView({
@@ -168,7 +204,21 @@ function MainPage() {
                 We Are <span>#IMPLUDE!</span>
               </h1>
               <div className="Ment">
-                <img className="Vision" src={Vision} alt="Vision" />
+                <div className="slider-container">
+                  <button onClick={handlePrev} className="slider-button left">
+                    {"<"}
+                  </button>
+                  <div className="image-container">
+                    <img
+                      src={images[currentIndex]}
+                      alt={`Slide ${currentIndex}`}
+                      className="Vision"
+                    />
+                  </div>
+                  <button onClick={handleNext} className="slider-button right">
+                    {">"}
+                  </button>
+                </div>
                 <div className="OgleMent">
                   우리가 사용하는 평범하고도 대단한 많은 것들은 처음엔 <br />
                   누군가의 상상에 의해 만들어졌습니다.
