@@ -103,37 +103,26 @@ function MainPage() {
   useEffect(() => {
     const interval = setInterval(() => {
       setRandomAchievement((prev) => getRandomAchievement(prev));
-  
-      setAwardCurrentIndex((prevAwardIndex) => {
-        const awardNextIndex = (prevAwardIndex + 1) % constants.awardimages.length;
-        const awardPrevIndex =
-          (prevAwardIndex - 1 + constants.awardimages.length) %
-          constants.awardimages.length;
-  
-        // 미리 로드
-        new Image().src = constants.awardimages[awardNextIndex];
-        new Image().src = constants.awardimages[awardPrevIndex];
-  
-        return awardNextIndex;
-      });
-  
-      setCurrentIndex((prevImageIndex) => {
-        const nextImageIndex = (prevImageIndex + 1) % constants.images.length;
-        const prevImageIndex =
-          (prevImageIndex - 1 + constants.images.length) %
-          constants.images.length;
-  
-        // 미리 로드
-        new Image().src = constants.images[nextImageIndex];
-        new Image().src = constants.images[prevImageIndex];
-  
-        return nextImageIndex;
-      });
+
+      const awardNextIndex =
+        (awardCurrentIndex + 1) % constants.awardimages.length;
+      const awardPrevIndex =
+        (awardCurrentIndex - 1 + constants.awardimages.length) %
+        constants.awardimages.length;
+      const nextIndex = (currentIndex + 1) % constants.images.length;
+      const prevIndex =
+        (currentIndex - 1 + constants.images.length) % constants.images.length;
+
+      new Image().src = constants.awardimages[awardNextIndex]; // 다음 수상 이미지 미리 로드
+      new Image().src = constants.awardimages[awardPrevIndex]; // 이전 수상 이미지 미리 로드
+      new Image().src = constants.images[nextIndex]; // 다음 이미지 미리 로드
+      new Image().src = constants.images[prevIndex]; // 이전 이미지 미리 로드
     }, 3000);
-  
-    return () => clearInterval(interval);
+
+    return () => {
+      clearInterval(interval);
+    };
   }, []);
-  
 
   const scrollToPhrase = () => {
     phraseRef.current.scrollIntoView({
