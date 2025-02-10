@@ -7,7 +7,6 @@ import styled, { css, keyframes } from "styled-components";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import "./mainpage.css";
-import award from "../assets/award1.png";
 import { useMediaQuery } from "react-responsive";
 import YAMMY from "../assets/Project_Thumbnail/YAMMY.jpg";
 import VOAH from "../assets/Project_Thumbnail/VOAH.jpg";
@@ -19,8 +18,17 @@ import ITNun from "../assets/Project_Thumbnail/ITNun.jpg";
 import DINEON from "../assets/Project_Thumbnail/DINEON.jpg";
 import DAYCUBE from "../assets/Project_Thumbnail/DAYCUBE.jpg";
 import ASD from "../assets/Project_Thumbnail/ASD.jpg";
+import award1 from "../assets/award/1.jpg"
+import award2 from "../assets/award/2.jpg"
+import award3 from "../assets/award/3.jpg"
+import award4 from "../assets/award/4.jpg"
+import award5 from "../assets/award/5.jpg"
+import award6 from "../assets/award/6.jpg"
+import award7 from "../assets/award/7.jpg"
+import award8 from "../assets/award/8.jpg"
+import award9 from "../assets/award/9.jpg"
 
-// Styled-components for messageBar
+
 const getAnimation = (n, isTabletOrMobile) => keyframes`
   0% {
     width: ${isTabletOrMobile ? `${n / 32}rem` : `${n / 24}rem`}
@@ -61,7 +69,20 @@ function MainPage() {
     DAYCUBE,
     ASD,
   ];
+  const awardimages=[
+    award1,
+    award2,
+    award3,
+    award4,
+    award5,
+    award6,
+    award7,
+    award8,
+    award9,
+  ]
+
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [awardCurrentIndex, setAwardCurrentIndex] = useState(1);
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
@@ -75,6 +96,17 @@ function MainPage() {
     );
   };
 
+  const awardHandlePrev = () => {
+    setAwardCurrentIndex((prevIndex) =>
+      prevIndex === 0? awardimages.length - 1 : prevIndex - 1
+    );
+  };
+
+  const awardHandleNext = () => {
+    setAwardCurrentIndex((prevIndex) =>
+      prevIndex === awardimages.length - 1? 0 : prevIndex + 1
+    );
+  };
   const navigate = useNavigate();
 
   const handleLinkClick = (path) => {
@@ -154,10 +186,9 @@ function MainPage() {
     const interval = setInterval(() => {
       setRandomAchievement((prev) => getRandomAchievement(prev));
       setRandomValue((prev) => getRandomValue(prev));
-      handleNext();
     }, 3000); // Update every 3 seconds
     return () => clearInterval(interval);
-  }, [currentIndex]);
+  },[]);
 
   const scrollToPhrase = () => {
     phraseRef.current.scrollIntoView({
@@ -243,7 +274,21 @@ function MainPage() {
           <div className="summary-wrapper">
             {/* 임플루드 실적 */}
             <div className="achievementSummary">
-              <img src={award} className="awardImage" />
+            <div className="slider-container">
+                  <button onClick={awardHandlePrev} className="slider-button left">
+                    {"<"}
+                  </button>
+                  <div className="image-container">
+                    <img
+                      src={awardimages[awardCurrentIndex]}
+                      alt={`Slide ${currentIndex}`}
+                      className="awardImage"
+                    />
+                  </div>
+                  <button onClick={awardHandleNext} className="slider-button right">
+                    {">"}
+                  </button>
+                </div>
               <div className="achievementSummaryDetail">
                 <div className="SummaryText">
                   <h2>임플루드 실적</h2>
