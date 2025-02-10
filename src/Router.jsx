@@ -1,10 +1,10 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom"; // 추가
-import MainPage from './Main/mainpage';
-import Member from "./Member/member";
-import Ideal from "./ideal/ideal";
-import Achievement from "./achievements/achievements";
-import RecruitPage from "./Member/recruit";
+import MainPage from './pages/Main/mainpage';
+import Member from "./pages/Member/member";
+import Ideal from "./pages/ideal/ideal";
+import Achievement from "./pages/achievements/achievements";
+import RecruitPage from "./pages/Member/recruit";
 
 function Router() {
     return (

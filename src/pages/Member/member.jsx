@@ -1,10 +1,10 @@
-import Footer from "../components/footer";
-import Header from "../components/header";
+import Footer from "../../components/footer";
+import Header from "../../components/header";
 import "./member.css";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import Banner from "../assets/ImpludeBanner.png";
-import DefaultProfile from "../assets/default-profile.png"; // Import default profile image
+import Banner from "../../assets/ImpludeBanner.png";
+import DefaultProfile from "../../assets/default-profile.png"; // Import default profile image
 
 export default function Member() {
   const [activeTab, setActiveTab] = useState("23기");

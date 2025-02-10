@@ -13,10 +13,10 @@ import {
   Title,
   Detail,
   RecruitText,
-} from "../components/atomic";
-import Header from "../components/header";
-import Footer from "../components/footer";
-import RecruitBanner from "../assets/RecruitBanner.jpg";
+} from "../../components/atomic";
+import Header from "../../components/header";
+import Footer from "../../components/footer";
+import RecruitBanner from "../../assets/RecruitBanner.jpg";
 import "./recruit.css";
 
 function Intro() {

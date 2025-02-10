@@ -1,8 +1,8 @@
-import Footer from "../components/footer";
-import Header from "../components/header";
+import Footer from "../../components/footer";
+import Header from "../../components/header";
 import { useState } from "react";
 import "./achievements.css";
-import Banner from "../assets/ImpludeBanner.png";
+import Banner from "../../assets/ImpludeBanner.png";
 
 const achievementsData = [
   {
