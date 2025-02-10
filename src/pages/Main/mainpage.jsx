@@ -38,8 +38,6 @@ import award9 from "../../assets/award/9.jpg";
 // Styles
 import "./mainpage.css";
 
-
-
 const getAnimation = (n, isTabletOrMobile) => keyframes`
   0% {
     width: ${isTabletOrMobile ? `${n / 32}rem` : `${n / 24}rem`}
@@ -80,7 +78,7 @@ function MainPage() {
     DAYCUBE,
     ASD,
   ];
-  const awardimages=[
+  const awardimages = [
     award1,
     award2,
     award3,
@@ -90,7 +88,7 @@ function MainPage() {
     award7,
     award8,
     award9,
-  ]
+  ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [awardCurrentIndex, setAwardCurrentIndex] = useState(1);
@@ -109,13 +107,13 @@ function MainPage() {
 
   const awardHandlePrev = () => {
     setAwardCurrentIndex((prevIndex) =>
-      prevIndex === 0? awardimages.length - 1 : prevIndex - 1
+      prevIndex === 0 ? awardimages.length - 1 : prevIndex - 1
     );
   };
 
   const awardHandleNext = () => {
     setAwardCurrentIndex((prevIndex) =>
-      prevIndex === awardimages.length - 1? 0 : prevIndex + 1
+      prevIndex === awardimages.length - 1 ? 0 : prevIndex + 1
     );
   };
   const navigate = useNavigate();
@@ -193,13 +191,44 @@ function MainPage() {
     } while (randomAchievement === previousAchievement);
     return randomAchievement;
   }
+  const preloadedImages = useRef(new Set());
+
   useEffect(() => {
     const interval = setInterval(() => {
       setRandomAchievement((prev) => getRandomAchievement(prev));
       setRandomValue((prev) => getRandomValue(prev));
-    }, 3000); // Update every 3 seconds
-    return () => clearInterval(interval);
-  },[]);
+
+      const preloadImage = (src) => {
+        if (!preloadedImages.current.has(src)) {
+          preloadedImages.current.add(src);
+          const img = new Image();
+          img.src = src;
+        }
+      };
+
+      if (Array.isArray(awardimages) && Array.isArray(images)) {
+        if (awardimages.length > 0 && images.length > 0) {
+          preloadImage(
+            awardimages[(awardCurrentIndex + 1) % awardimages.length]
+          );
+          preloadImage(
+            awardimages[
+              (awardCurrentIndex - 1 + awardimages.length) % awardimages.length
+            ]
+          );
+          preloadImage(images[(currentIndex + 1) % images.length]);
+          preloadImage(
+            images[(currentIndex - 1 + images.length) % images.length]
+          );
+        }
+      }
+    }, 3000);
+
+    return () => {
+      clearInterval(interval);
+      preloadedImages.current.clear(); // 캐시 정리
+    };
+  }, [awardCurrentIndex, currentIndex]);
 
   const scrollToPhrase = () => {
     phraseRef.current.scrollIntoView({
@@ -285,21 +314,27 @@ function MainPage() {
           <div className="summary-wrapper">
             {/* 임플루드 실적 */}
             <div className="achievementSummary">
-            <div className="slider-container">
-                  <button onClick={awardHandlePrev} className="slider-button left">
-                    {"<"}
-                  </button>
-                  <div className="image-container">
-                    <img
-                      src={awardimages[awardCurrentIndex]}
-                      alt={`Slide ${currentIndex}`}
-                      className="awardImage"
-                    />
-                  </div>
-                  <button onClick={awardHandleNext} className="slider-button right">
-                    {">"}
-                  </button>
+              <div className="slider-container">
+                <button
+                  onClick={awardHandlePrev}
+                  className="slider-button left"
+                >
+                  {"<"}
+                </button>
+                <div className="image-container">
+                  <img
+                    src={awardimages[awardCurrentIndex]}
+                    alt={`Slide ${currentIndex}`}
+                    className="awardImage"
+                  />
                 </div>
+                <button
+                  onClick={awardHandleNext}
+                  className="slider-button right"
+                >
+                  {">"}
+                </button>
+              </div>
               <div className="achievementSummaryDetail">
                 <div className="SummaryText">
                   <h2>임플루드 실적</h2>
