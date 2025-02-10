@@ -162,12 +162,13 @@ a:visited {
   justify-content: center;
   margin-top: 7vw;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  align-items: center;
 }
 
 .awardImage {
   border-radius: 5%;
-  width: 100%;
-  height: 40vw;
+  max-height: 35vw;
+  max-width: 25vw;
 }
 
 .achievementSummary h2 {
