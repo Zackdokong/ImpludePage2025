@@ -12,28 +12,7 @@ import Footer from "../../components/footer";
 import ImpludeLogo from "../../assets/implude.svg";
 import ArrowBottom from "../../assets/arrow_bottom.svg";
 
-// Project Thumbnails
-import YAMMY from "../../assets/Project_Thumbnail/YAMMY.jpg";
-import VOAH from "../../assets/Project_Thumbnail/VOAH.jpg";
-import MOLA from "../../assets/Project_Thumbnail/MOLA.jpg";
-import MK1 from "../../assets/Project_Thumbnail/MK1.jpg";
-import JOIN from "../../assets/Project_Thumbnail/JOIN.jpg";
-import JipGaGoSipDa from "../../assets/Project_Thumbnail/JipGaGoSipDa.jpg";
-import ITNun from "../../assets/Project_Thumbnail/ITNun.jpg";
-import DINEON from "../../assets/Project_Thumbnail/DINEON.jpg";
-import DAYCUBE from "../../assets/Project_Thumbnail/DAYCUBE.jpg";
-import ASD from "../../assets/Project_Thumbnail/ASD.jpg";
-
-// Awards
-import award1 from "../../assets/award/1.jpg";
-import award2 from "../../assets/award/2.jpg";
-import award3 from "../../assets/award/3.jpg";
-import award4 from "../../assets/award/4.jpg";
-import award5 from "../../assets/award/5.jpg";
-import award6 from "../../assets/award/6.jpg";
-import award7 from "../../assets/award/7.jpg";
-import award8 from "../../assets/award/8.jpg";
-import award9 from "../../assets/award/9.jpg";
+import * as constants from "../../constant/index.js";
 
 // Styles
 import "./mainpage.css";
@@ -66,54 +45,30 @@ const StyledSpan = styled.span.withConfig({
 `;
 
 function MainPage() {
-  const images = [
-    YAMMY,
-    VOAH,
-    MOLA,
-    MK1,
-    JOIN,
-    JipGaGoSipDa,
-    ITNun,
-    DINEON,
-    DAYCUBE,
-    ASD,
-  ];
-  const awardimages = [
-    award1,
-    award2,
-    award3,
-    award4,
-    award5,
-    award6,
-    award7,
-    award8,
-    award9,
-  ];
-
   const [currentIndex, setCurrentIndex] = useState(0);
   const [awardCurrentIndex, setAwardCurrentIndex] = useState(1);
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+      prevIndex === 0 ? constants.images.length - 1 : prevIndex - 1
     );
   };
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      prevIndex === constants.images.length - 1 ? 0 : prevIndex + 1
     );
   };
 
   const awardHandlePrev = () => {
     setAwardCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? awardimages.length - 1 : prevIndex - 1
+      prevIndex === 0 ? constants.awardimages.length - 1 : prevIndex - 1
     );
   };
 
   const awardHandleNext = () => {
     setAwardCurrentIndex((prevIndex) =>
-      prevIndex === awardimages.length - 1 ? 0 : prevIndex + 1
+      prevIndex === constants.awardimages.length - 1 ? 0 : prevIndex + 1
     );
   };
   const navigate = useNavigate();
@@ -206,19 +161,19 @@ function MainPage() {
         }
       };
 
-      if (Array.isArray(awardimages) && Array.isArray(images)) {
-        if (awardimages.length > 0 && images.length > 0) {
+      if (Array.isArray(constants.awardimages) && Array.isArray(constants.images)) {
+        if (constants.awardimages.length > 0 && constants.images.length > 0) {
           preloadImage(
-            awardimages[(awardCurrentIndex + 1) % awardimages.length]
+            constants.awardimages[(awardCurrentIndex + 1) % constants.awardimages.length]
           );
           preloadImage(
-            awardimages[
-              (awardCurrentIndex - 1 + awardimages.length) % awardimages.length
+            constants.awardimages[
+              (awardCurrentIndex - 1 + constants.awardimages.length) % constants.awardimages.length
             ]
           );
-          preloadImage(images[(currentIndex + 1) % images.length]);
+          preloadImage(constants.images[(currentIndex + 1) % constants.images.length]);
           preloadImage(
-            images[(currentIndex - 1 + images.length) % images.length]
+            constants.images[(currentIndex - 1 + constants.images.length) % constants.images.length]
           );
         }
       }
@@ -281,7 +236,7 @@ function MainPage() {
                   </button>
                   <div className="image-container">
                     <img
-                      src={images[currentIndex]}
+                      src={constants.images[currentIndex]}
                       alt={`Slide ${currentIndex}`}
                       className="Vision"
                     />
@@ -323,7 +278,7 @@ function MainPage() {
                 </button>
                 <div className="image-container">
                   <img
-                    src={awardimages[awardCurrentIndex]}
+                    src={constants.awardimages[awardCurrentIndex]}
                     alt={`Slide ${currentIndex}`}
                     className="awardImage"
                   />
