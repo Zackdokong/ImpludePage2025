@@ -80,64 +80,15 @@ function MainPage() {
 
   const phraseRef = useRef(null);
 
-  const keyvalueData = [
-    { detail: "팀워크" },
-    { detail: "자유롭고 편한 소통" },
-    { detail: "많은 실전 경험" },
-    { detail: "실패를 즐기는" },
-    { detail: "지속적인 혁신" },
-    { detail: "깊은 신뢰" },
-  ];
-
-  const achievementsData = [
-    {
-      year: 2024,
-      details: [
-        { rank: "1위", description: "비즈쿨 우수창업동아리" },
-        { rank: "2위", description: "Junction Asia" },
-        { rank: "대상", description: "레드브릭 게임개발대회" },
-        { rank: "대상", description: "한국코드페어" },
-        { rank: "대상", description: "데이터 크리에이터캠프" },
-        { rank: "우수상", description: "STA+C" },
-      ],
-    },
-    {
-      year: 2023,
-      details: [
-        { rank: "1위", description: "비즈쿨 우수창업동아리" },
-        { rank: "금상", description: "벤처창업아이템경진대회" },
-        { rank: "특별상", description: "공개 SW 개발자 대회" },
-      ],
-    },
-    {
-      year: 2022,
-      details: [
-        { rank: "대상", description: "STA+C" },
-        { rank: "특별상", description: "공개 SW 개발자 대회" },
-      ],
-    },
-  ];
-
   const [randomAchievement, setRandomAchievement] = useState(() =>
     getRandomAchievement()
   );
-
-  const [randomValue, setRandomValue] = useState(() => getRandomValue());
-
-  function getRandomValue(previousValue = null) {
-    let randomValue;
-    do {
-      randomValue =
-        keyvalueData[Math.floor(Math.random() * keyvalueData.length)].detail;
-    } while (randomValue === previousValue);
-    return randomValue;
-  }
 
   function getRandomAchievement(previousAchievement = null) {
     let randomAchievement;
     do {
       const randomYear =
-        achievementsData[Math.floor(Math.random() * achievementsData.length)];
+        constants.achievementsData[Math.floor(Math.random() * constants.achievementsData.length)];
       const randomDetail =
         randomYear.details[
           Math.floor(Math.random() * randomYear.details.length)
@@ -151,7 +102,6 @@ function MainPage() {
   useEffect(() => {
     const interval = setInterval(() => {
       setRandomAchievement((prev) => getRandomAchievement(prev));
-      setRandomValue((prev) => getRandomValue(prev));
 
       const preloadImage = (src) => {
         if (!preloadedImages.current.has(src)) {
