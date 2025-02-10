@@ -99,22 +99,21 @@ function MainPage() {
     } while (randomAchievement === previousAchievement);
     return randomAchievement;
   }
-  const preloadedImages = useRef(new Set());
 
   useEffect(() => {
     const interval = setInterval(() => {
       setRandomAchievement((prev) => getRandomAchievement(prev));
 
-      const awardNextIndex = (awardCurrentIndex + 1) % awardimages.length;
+      const awardNextIndex = (awardCurrentIndex + 1) % constants.awardimages.length;
       const awardPrevIndex =
-        (awardCurrentIndex - 1 + awardimages.length) % awardimages.length;
-      const nextIndex = (currentIndex + 1) % images.length;
-      const prevIndex = (currentIndex - 1 + images.length) % images.length;
+        (awardCurrentIndex - 1 + constants.awardimages.length) % constants.awardimages.length;
+      const nextIndex = (currentIndex + 1) % constants.images.length;
+      const prevIndex = (currentIndex - 1 + constants.images.length) % constants.images.length;
 
-      new Image().src = awardimages[awardNextIndex]; // 다음 수상 이미지 미리 로드
-      new Image().src = awardimages[awardPrevIndex]; // 이전 수상 이미지 미리 로드
-      new Image().src = images[nextIndex]; // 다음 이미지 미리 로드
-      new Image().src = images[prevIndex]; // 이전 이미지 미리 로드
+      new Image().src = constants.awardimages[awardNextIndex]; // 다음 수상 이미지 미리 로드
+      new Image().src = constants.awardimages[awardPrevIndex]; // 이전 수상 이미지 미리 로드
+      new Image().src = constants.images[nextIndex]; // 다음 이미지 미리 로드
+      new Image().src = constants.images[prevIndex]; // 이전 이미지 미리 로드
     }, 3000);
 
     return () => {
