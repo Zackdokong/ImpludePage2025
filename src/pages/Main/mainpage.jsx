@@ -88,7 +88,9 @@ function MainPage() {
     let randomAchievement;
     do {
       const randomYear =
-        constants.achievementsData[Math.floor(Math.random() * constants.achievementsData.length)];
+        constants.achievementsData[
+          Math.floor(Math.random() * constants.achievementsData.length)
+        ];
       const randomDetail =
         randomYear.details[
           Math.floor(Math.random() * randomYear.details.length)
@@ -103,37 +105,22 @@ function MainPage() {
     const interval = setInterval(() => {
       setRandomAchievement((prev) => getRandomAchievement(prev));
 
-      const preloadImage = (src) => {
-        if (!preloadedImages.current.has(src)) {
-          preloadedImages.current.add(src);
-          const img = new Image();
-          img.src = src;
-        }
-      };
+      const awardNextIndex = (awardCurrentIndex + 1) % awardimages.length;
+      const awardPrevIndex =
+        (awardCurrentIndex - 1 + awardimages.length) % awardimages.length;
+      const nextIndex = (currentIndex + 1) % images.length;
+      const prevIndex = (currentIndex - 1 + images.length) % images.length;
 
-      if (Array.isArray(constants.awardimages) && Array.isArray(constants.images)) {
-        if (constants.awardimages.length > 0 && constants.images.length > 0) {
-          preloadImage(
-            constants.awardimages[(awardCurrentIndex + 1) % constants.awardimages.length]
-          );
-          preloadImage(
-            constants.awardimages[
-              (awardCurrentIndex - 1 + constants.awardimages.length) % constants.awardimages.length
-            ]
-          );
-          preloadImage(constants.images[(currentIndex + 1) % constants.images.length]);
-          preloadImage(
-            constants.images[(currentIndex - 1 + constants.images.length) % constants.images.length]
-          );
-        }
-      }
+      new Image().src = awardimages[awardNextIndex]; // 다음 수상 이미지 미리 로드
+      new Image().src = awardimages[awardPrevIndex]; // 이전 수상 이미지 미리 로드
+      new Image().src = images[nextIndex]; // 다음 이미지 미리 로드
+      new Image().src = images[prevIndex]; // 이전 이미지 미리 로드
     }, 3000);
 
     return () => {
       clearInterval(interval);
-      preloadedImages.current.clear(); // 캐시 정리
     };
-  }, [awardCurrentIndex, currentIndex]);
+  }, []);
 
   const scrollToPhrase = () => {
     phraseRef.current.scrollIntoView({
