@@ -11,6 +11,7 @@ import Footer from "../../components/footer";
 // Assets
 import ImpludeLogo from "../../assets/implude.svg";
 import ArrowBottom from "../../assets/arrow_bottom.svg";
+import VisionImg from "../../assets/Vision.jpg";
 
 import * as constants from "../../constant/index.js";
 
@@ -47,7 +48,7 @@ const StyledSpan = styled.span.withConfig({
 function MainPage() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [awardCurrentIndex, setAwardCurrentIndex] = useState(1);
-
+  /*
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? constants.images.length - 1 : prevIndex - 1
@@ -59,7 +60,7 @@ function MainPage() {
       prevIndex === constants.images.length - 1 ? 0 : prevIndex + 1
     );
   };
-
+  */
   const awardHandlePrev = () => {
     setAwardCurrentIndex((prevIndex) =>
       prevIndex === 0 ? constants.awardimages.length - 1 : prevIndex - 1
@@ -168,19 +169,13 @@ function MainPage() {
               </h1>
               <div className="Ment">
                 <div className="slider-container">
-                  <button onClick={handlePrev} className="slider-button left">
-                    {"<"}
-                  </button>
                   <div className="image-container">
                     <img
-                      src={constants.images[currentIndex]}
+                      src={VisionImg}
                       alt={`Slide ${currentIndex}`}
                       className="Vision"
                     />
                   </div>
-                  <button onClick={handleNext} className="slider-button right">
-                    {">"}
-                  </button>
                 </div>
                 <div className="OgleMent">
                   우리가 사용하는 평범하고도 대단한 많은 것들은 처음엔 <br />
