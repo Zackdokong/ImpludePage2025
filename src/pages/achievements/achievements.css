@@ -168,3 +168,18 @@
 .impludeBanner {
     width: 100%;
 }
+
+.rank-대상,
+.rank-1위,
+.rank-금상 {
+    color: #ffd700 !important;
+}
+
+.rank-은상,
+ .rank-2위 {
+    color: silver !important;
+}
+
+.rank-동상 {
+    color: #bf9b30 !important;
+}

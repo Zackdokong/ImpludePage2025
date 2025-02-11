@@ -15,7 +15,7 @@ export default function Achievement() {
       <div className="PageWrapper">
         <div className="achievement-container">
           <div className="timeline">
-            {constants.achievementsData.map((yearData) => (
+            {constants.achievementData.map((yearData) => (
               <div
                 key={yearData.year}
                 className={`timeline-item ${
@@ -28,7 +28,7 @@ export default function Achievement() {
             ))}
           </div>
           <div className="achievement-details">
-            {constants.achievementsData
+            {constants.achievementData
               .filter((data) => data.year === activeYear)
               .map((yearData) => (
                 <div key={yearData.year} className="year-section">
@@ -37,8 +37,10 @@ export default function Achievement() {
                     {yearData.details.map((detail, index) => (
                       <div key={index} className="achievement-card">
                         <p>
-                          <span>{`${detail.rank}`}</span> -{" "}
-                          {`${detail.description}`}
+                          <span
+                            className={`rank-${detail.rank}`}
+                          >{`${detail.rank}`}</span>{" "}
+                          - {`${detail.description}`}
                         </p>
                       </div>
                     ))}
