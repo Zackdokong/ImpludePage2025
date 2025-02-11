@@ -48,7 +48,7 @@ const StyledSpan = styled.span.withConfig({
 function MainPage() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [awardCurrentIndex, setAwardCurrentIndex] = useState(1);
-  /*
+
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? constants.images.length - 1 : prevIndex - 1
@@ -60,7 +60,7 @@ function MainPage() {
       prevIndex === constants.images.length - 1 ? 0 : prevIndex + 1
     );
   };
-  */
+
   const awardHandlePrev = () => {
     setAwardCurrentIndex((prevIndex) =>
       prevIndex === 0 ? constants.awardimages.length - 1 : prevIndex - 1
@@ -178,22 +178,32 @@ function MainPage() {
                   </div>
                 </div>
                 <div className="OgleMent">
-                  우리가 사용하는 평범하고도 대단한 많은 것들은 처음엔 <br />
-                  누군가의 상상에 의해 만들어졌습니다.
-                  <br />
-                  세상을 구성하는 상상들에는 특별한 힘이 있습니다.
-                  <br />
-                  임플루드는 상상이 세상을 바꿀 수 있다고 믿습니다.
-                  <br />
-                  하지만 그저 상상만으로는 세상을 바꿀 수 없습니다.
-                  <br />
-                  상상으로 세상을 바꾸기 위해서는
-                  <br /> 상상을 현실로 만들어낼 수 있는 능력이 필요합니다.
-                  <br />
-                  임플루드는 이를 돕기 위해 존재합니다.
-                  <br />
-                  우리의 상상이 세상을 바꿀 수 있도록,
-                  <br /> 임플루드는 오늘도 달리고 있습니다.
+                  <span className="phar1">
+                    우리가 사용하는 평범하고도 대단한 많은 것들은 처음엔 <br />
+                    누군가의 상상에 의해 만들어졌습니다.
+                    <br />
+                  </span>
+                  <span className="phar">
+                    세상을 구성하는 상상들에는 특별한 힘이 있습니다.
+                    <br />
+                    <span className="phar-blue">임플루드는 상상이 세상을 바꿀 수 있다고 믿습니다.</span>
+                    <br />
+                    하지만 그저 상상만으로는 세상을 바꿀 수 없습니다.
+                    <br />
+                  </span>
+                  <span className="phar1">
+                    상상으로 세상을 바꾸기 위해서는
+                    <br /> 상상을 현실로 만들어낼 수 있는 능력이 필요합니다.
+                    <br />
+                  </span>
+                  <span className="phar1">
+                    임플루드는 이를 돕기 위해 존재합니다.
+                    <br />
+                  </span>
+                  <span className="phar">
+                    우리의 상상이 세상을 바꿀 수 있도록,
+                    <br /> 임플루드는 오늘도 달리고 있습니다.
+                  </span>
                 </div>
               </div>
             </div>

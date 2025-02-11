@@ -317,21 +317,40 @@ a:visited {
   margin-right: 2rem;
   animation: fadeInScale 1s ease-out;
 }
-
-.OgleMent {
-  font-size: 1.55rem;
-  font-weight: 900;
-  line-height: 1.8;
-  color: #333;
-  max-width: 50vw;
-  animation: slideInLeft 1s ease-out;
-  font-family: 'KCC-Ganpan';
-  margin-left: 2.5rem;
+@font-face {
+  font-family: 'goorm-sans-bold';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408@1.0/goorm-sans-bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
 }
 
-/* 텍스트에서 강조 부분 스타일 */
-.OgleMent br {
-  margin-bottom: 1.5rem;
+.OgleMent {
+  font-size: 1.4rem;
+  line-height: 1.5;
+  max-width: 50vw;
+  animation: slideInLeft 1s ease-out;
+  margin-left: 6rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.OgleMent .phar {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-family: 'goorm-sans-bold';
+}
+
+.OgleMent .phar1 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #555;
+  font-family: 'goorm-sans-bold';
+}
+
+.OgleMent .phar-blue {
+  color: #037bff;
+  font-family: 'goorm-sans-bold';
 }
 
 @font-face {
