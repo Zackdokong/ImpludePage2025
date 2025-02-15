@@ -327,26 +327,27 @@ a:visited {
 .OgleMent {
   font-size: 1.4rem;
   line-height: 1.5;
-  max-width: 50vw;
+  max-width: 55vw;
   animation: slideInLeft 1s ease-out;
   margin-left: 6rem;
   display: flex;
   flex-direction: column;
+  padding: 1rem;
 }
 
 .OgleMent .phar {
   color: #666;
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
-  font-family: 'goorm-sans-bold';
+  margin-bottom: 0.5rem;
+  font-size: 1.6rem;
+  font-family: goorm-sans-bold;
+  font-weight: 800;
+  transition: color 0.5s ease; /* Smooth transition for color change */
 }
 
-.OgleMent .phar1 {
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
-  color: #333;
-  font-family: 'goorm-sans-bold';
+.OgleMent .phar:hover {
+  color: #333; /* New color on hover */
 }
+
 
 @font-face {
   font-family: 'KCC-Ganpan';
