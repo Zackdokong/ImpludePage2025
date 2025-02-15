@@ -320,7 +320,6 @@ a:visited {
 @font-face {
   font-family: 'goorm-sans-bold';
   src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408@1.0/goorm-sans-bold.woff2') format('woff2');
-  font-weight: 700;
   font-style: normal;
 }
 
@@ -335,20 +334,32 @@ a:visited {
   padding: 1rem;
 }
 
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SUIT-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
 .OgleMent .phar {
-  color: #777;
+  color: #333;
   margin-bottom: 1rem;
-  font-size: 1.6rem;
-  font-family: goorm-sans-bold;
-  font-weight: 800;
+  font-size: 1.7rem;
+  font-family: 'SUIT-Regular';
+  font-weight: 500;
   transition: color 0.5s ease; /* Smooth transition for color change */
 }
 
 .OgleMent .phar-acc {
   color: #333;
   margin-bottom: 1rem;
-  font-size: 1.6rem;
-  font-family: goorm-sans-bold;
+  font-size: 1.7rem;
+  font-family: 'SUIT-Regular';
   font-weight: 800;
   transition: color 0.5s ease; /* Smooth transition for color change */
 }
