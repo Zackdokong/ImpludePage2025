@@ -192,8 +192,6 @@ function MainPage() {
                   <span className="phar">
                     하지만 그저 상상만으로는 세상을 바꿀 수 없습니다.
                     <br />
-                  </span>
-                  <span className="phar">
                     상상으로 세상을 바꾸기 위해서는
                     <br /> 상상을 현실로 만들어낼 수 있는 능력이 필요합니다.
                     <br />
