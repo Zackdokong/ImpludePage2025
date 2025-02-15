@@ -336,16 +336,25 @@ a:visited {
 }
 
 .OgleMent .phar {
-  color: #666;
-  margin-bottom: 0.5rem;
+  color: #777;
+  margin-bottom: 1rem;
   font-size: 1.6rem;
   font-family: goorm-sans-bold;
   font-weight: 800;
   transition: color 0.5s ease; /* Smooth transition for color change */
 }
 
-.OgleMent .phar:hover {
-  color: #333; /* New color on hover */
+.OgleMent .phar-acc {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+  font-family: goorm-sans-bold;
+  font-weight: 800;
+  transition: color 0.5s ease; /* Smooth transition for color change */
+}
+
+.OgleMent .phar:hover, .OgleMent .phar-acc:hover{
+  color: #037bff; /* New color on hover */
 }
 
 
