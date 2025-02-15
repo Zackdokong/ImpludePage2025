@@ -49,7 +49,7 @@ export default function Member() {
               ))}
           </div>
           {activeTab === "24기" && (
-            <Link className="findOut" to="recruit">
+            <Link className="findOut" to="/recruit">
               <h1>
                 지금은 11기 <span>임플루드</span> 동아리원을 <span>모집</span> 중이에요!
               </h1>
