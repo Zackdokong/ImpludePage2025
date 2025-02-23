@@ -222,9 +222,11 @@ export const applyProcess = [
     {
       name: "이지민",
       role: "AI, BE Developer",
-      bio: "한줄소개",
+      bio: "꿀꿀",
     },
     {
+
+      
       name: "이승준",
       role: "App, FE Developer",
       bio: "임플루드에서 App과 FE개발을 담당하고 있는 이승준입니다!",
