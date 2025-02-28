@@ -14,9 +14,7 @@ export default function Footer() {
                         <h1>#IMPLUDE</h1>
                         <h3>INCLUDE + IMPORT</h3>
                         <br></br>
-                        <h3>상호: IMPLUDE | 대표자명: 김민찬</h3>
                         <h3>Email: biz.implude@dimigo.hs.kr</h3>
-                        <h3>주소: 경기도 안산시 단원구 사세충열로 94 한국디지털미디어고등학교</h3>
                     </div>
                 </div>
                 <div className="sns">
