@@ -51,8 +51,8 @@
 }
 
 .sns img {
-    width: 60px; /* 아이콘 크기 */
-    height: 60px;
+    width: 45px; /* 아이콘 크기 */
+    height: 45px;
     object-fit: contain;
     cursor: pointer;
     transition: transform 0.3s ease;
