@@ -7,7 +7,7 @@
     background-color: #101010; /* 어두운 배경색 */
     color: white; /* 텍스트 색상 */
     border-top: 2px solid #037AFF; /* 상단에 강조선 */
-    padding-top: 1rem;
+    padding: 1vw;
 }
 
 /* 로고와 정보 묶음 */
@@ -21,9 +21,10 @@
 
 /* 로고 스타일 */
 .Logo {
-    width: 250px;
+    width: 200px;
     height: auto;
     margin-bottom: 1.5rem;
+    margin: 1vw;    
 }
 
 /* 정보 텍스트 스타일 */
@@ -56,6 +57,7 @@
     object-fit: contain;
     cursor: pointer;
     transition: transform 0.3s ease;
+    margin-top: 1vw;
 }
 
 .sns img:hover {
