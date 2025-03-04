@@ -1,3 +1,13 @@
+* {
+  font-family: 'SBAggroB';
+  @font-face {
+    font-family: 'SBAggroB';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+}
+
 a{
   text-decoration: none;
   color: white;
@@ -5,7 +15,15 @@ a{
 a:visited {
   color: inherit; /* 방문 후에도 색상이 바뀌지 않도록 설정 */
 }
-
+.MentWrapper h1, .MentWrapper span{
+  font-family: 'SBAggroB' !important;
+  @font-face {
+    font-family: 'SBAggroB';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+}
 /* 전체 Wrapper 스타일 */
 .wrapper {
   justify-content: center;
@@ -33,6 +51,13 @@ a:visited {
   font-size: 4vw;
   margin: 3vw;
   margin-top: 4vw;
+  font-family: 'SBAggroB' !important;
+  @font-face {
+    font-family: 'SBAggroB';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 }
 
 .ImpludeLogo {
@@ -82,10 +107,24 @@ a:visited {
   margin-bottom: 3vw;
   width: 100%;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'SBAggroB' !important;
+  @font-face {
+    font-family: 'SBAggroB';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 }
 
 .ImpludePhrase h1 {
   font-size: 5.2vw;
+  font-family: 'SBAggroB' !important;
+  @font-face {
+    font-family: 'SBAggroB';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 }
 
 @font-face {
@@ -332,6 +371,11 @@ a:visited {
   display: flex;
   flex-direction: column;
   padding: 1rem;
+  font-family: 'SUIT-Regular';
+}
+
+.OgleMent span {
+  font-family: 'SUIT-Regular' !important;
 }
 
 @font-face {
@@ -416,4 +460,8 @@ a:visited {
 /* 오른쪽 버튼 */
 .slider-button.right {
   right: 1rem; /* 오른쪽 버튼 위치를 조정 */
+}
+
+.ImpludePhrase div, .ImpludePhrase span {
+  font-family: 'SBAggroB' !important;
 }
