@@ -16,7 +16,7 @@ import {
 } from "../../components/atomic";
 import Header from "../../components/header";
 import Footer from "../../components/footer";
-import RecruitBanner from "../../assets/RecruitBanner.jpg";
+import RecruitBanner from "../../assets/RecruitBanner.png";
 import "./recruit.css";
 import * as constants from "../../constant/index.js";
 
