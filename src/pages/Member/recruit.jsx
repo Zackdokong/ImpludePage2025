@@ -63,7 +63,7 @@ function Process() {
       <Col gap="3.25rem">
         <RecruitTitle color={"--gray-black"}>1. 포지션 선택하기</RecruitTitle>
         <RecruitText color={"--gray-black"}>
-          임플루드의 포지션은 ‘FE, BE, APP, 디자이너, 기획자’로 구성되어 있어요.
+          임플루드의 포지션은 ‘FE, BE, 디자이너, 기획자’로 구성되어 있어요.
           <br />
           포지션은 중복 선택이 가능해요! 내가 자신있는 / 하고싶은 포지션을
           자유롭게 선택해주세요!
