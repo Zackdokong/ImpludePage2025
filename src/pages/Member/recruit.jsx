@@ -49,7 +49,7 @@ function Intro() {
             </TitleCircle>
           ))}
         </Row>
-        <Description color={"--gray-400"} style={{ fontSize: "1.3rem" }}>
+        <Description color={"--gray-400"} style={{ fontSize: "1.3rem"  }}>
           *상황에 따라 유동적으로 변경될 수 있어요.
         </Description>
       </Col>
@@ -115,7 +115,7 @@ function Process() {
         <Row justify="center">
           <ApplyButton>
             <Link
-              to="https://surfing.dimigo.in/circle/65e0b0a9160ba664e8e7518e/"
+              to="https://forms.gle/NG9rhGAD53xnREQq8"
               style={{ color: "white" }}
             >
               지원서 작성 바로가기
@@ -264,23 +264,6 @@ function PartDetail() {
                 백엔드
               </Description>
             </PartButton>
-            <PartButton
-              style={{
-                backgroundColor:
-                  detailPartDev == 2 ? "var(--brand-600)" : "var(--gray-white)",
-              }}
-              onClick={() => {
-                setDetailPartDev(2);
-              }}
-            >
-              <Description
-                style={{
-                  color: detailPartDev == 2 ? "white" : "var(--gray-600)",
-                }}
-              >
-                앱
-              </Description>
-            </PartButton>
           </Row>
           {detailPartDev == 0 && (
             <>
@@ -303,18 +286,6 @@ function PartDetail() {
               <Part
                 title={constants.partTitle[2]}
                 descriptions={constants.partDescription.experience.be}
-              />
-            </>
-          )}
-          {detailPartDev == 2 && (
-            <>
-              <Part
-                title={constants.partTitle[1]}
-                descriptions={constants.partDescription.plan.app}
-              />
-              <Part
-                title={constants.partTitle[2]}
-                descriptions={constants.partDescription.experience.app}
               />
             </>
           )}
@@ -381,14 +352,12 @@ const BannerImage = styled.img`
 `;
 
 const TitleCircle = styled.div`
-  font-family: "BMJUA" !important;
-  @font-face {
-    font-family: "BMJUA";
-    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff")
-      format("woff");
-    font-weight: normal;
-    font-style: normal;
-  }
+font-family: 'NanumSquareNeoExtraBold' !important;
+@font-face {
+    font-family: 'NanumSquareNeoExtraBold';
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.eot);
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.ttf) format("truetype");
+}
   display: flex;
   flex-basis: 11vw;
   flex-shrink: 0;
@@ -419,14 +388,12 @@ const CircleText = styled(Header2)`
     padding-right: 1rem;
   }
 
-  font-family: "BMJUA" !important;
-  @font-face {
-    font-family: "BMJUA";
-    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff")
-      format("woff");
-    font-weight: normal;
-    font-style: normal;
-  }
+font-family: 'NanumSquareNeoExtraBold';
+@font-face {
+    font-family: 'NanumSquareNeoExtraBold';
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.eot);
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.ttf) format("truetype");
+}
 `;
 
 const ApplyButton = styled.button`
@@ -457,14 +424,12 @@ const PartButton = styled.button`
 
 const RecruitTitle = styled(Title)`
   font-size: 3rem;
-  font-family: "BMJUA" !important;
-  @font-face {
-    font-family: "BMJUA";
-    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff")
-      format("woff");
-    font-weight: normal;
-    font-style: normal;
-  }
+font-family: 'NanumSquareNeoExtraBold';
+@font-face {
+    font-family: 'NanumSquareNeoExtraBold';
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.eot);
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.ttf) format("truetype");
+}
 `;
 
 function Part({ title, descriptions }) {
