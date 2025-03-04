@@ -37,13 +37,12 @@ a:visited {
 
 /* 로고와 애로우의 스타일 */
 .LogoWrapper {
+  background: radial-gradient(farthest-corner, rgba(0, 123, 255, 0.1), transparent);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
-  background: radial-gradient(farthest-corner, rgba(0, 123, 255, 0.1), transparent);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   margin-bottom: 2.5vw;
 }
 
@@ -97,7 +96,7 @@ a:visited {
 
 /* 임플루드 문구 영역 */
 .ImpludePhrase {
-  background: radial-gradient(farthest-corner, rgba(0, 123, 255, 0.1), transparent);
+
   border-radius: 1vw;
   font-size: 5vw;
   text-align: center;
@@ -106,7 +105,6 @@ a:visited {
   margin: 0 1.6vw;
   margin-bottom: 3vw;
   width: 100%;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   font-family: 'SBAggroB' !important;
   @font-face {
     font-family: 'SBAggroB';
@@ -195,12 +193,10 @@ a:visited {
 }
 
 .summary-wrapper {
-  background: radial-gradient(farthest-corner, rgba(0, 123, 255, 0.1), transparent);
   width: 100%;
   display: flex;
   justify-content: center;
   margin-top: 7vw;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   align-items: center;
 }
 
@@ -321,9 +317,7 @@ a:visited {
   align-items: center;
   justify-content: flex-start;
   padding: 8rem; 
-  background: radial-gradient(farthest-corner, rgba(0, 123, 255, 0.1), transparent);
   color: #333;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   text-align: left;
   gap: 2rem;
   margin-top: 3vw;
@@ -332,7 +326,8 @@ a:visited {
 
 .Ment {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: start; 
 }
 
 /* 제목 스타일 */
@@ -349,12 +344,13 @@ a:visited {
 }
 
 .Vision {
-  max-width: 45vw;
-  height: 100%;
+  width: 30vw;
+  height: 20vw;
   border-radius: 1.2vw;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  margin-right: 2rem;
+  margin-right: 0rem;
   animation: fadeInScale 1s ease-out;
+  overflow: hidden;
+  margin: 0vw !important;
 }
 @font-face {
   font-family: 'goorm-sans-bold';
@@ -367,10 +363,9 @@ a:visited {
   line-height: 1.5;
   max-width: 55vw;
   animation: slideInLeft 1s ease-out;
-  margin-left: 6rem;
+  margin-left: 4rem;
   display: flex;
-  flex-direction: column;
-  padding: 1rem;
+  flex-direction: column; 
   font-family: 'SUIT-Regular';
 }
 
@@ -423,19 +418,6 @@ a:visited {
   align-items: center;
 }
 
-/* 이미지 컨테이너 */
-.image-container {
-  position: relative;
-}
-
-/* 슬라이더 이미지 */
-.Vision {
-  width: 100%;
-  height: auto;
-  border-radius: 10px; /* 필요하면 추가 */
-  padding: 0;
-  margin: 0;
-}
 
 /* 공통 버튼 스타일 */
 .slider-button {

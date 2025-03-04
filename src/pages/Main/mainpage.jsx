@@ -11,7 +11,7 @@ import Footer from "../../components/footer";
 // Assets
 import ImpludeLogo from "../../assets/implude.svg";
 import ArrowBottom from "../../assets/arrow_bottom.svg";
-import VisionImg from "../../assets/Vision.jpg";
+import ImpludeImg from "../../assets/impludepic.jpg";
 
 import * as constants from "../../constant/index.js";
 
@@ -171,7 +171,7 @@ function MainPage() {
                 <div className="slider-container">
                   <div className="image-container">
                     <img
-                      src={VisionImg}
+                      src={ImpludeImg}
                       alt={`Slide ${currentIndex}`}
                       className="Vision"
                     />
