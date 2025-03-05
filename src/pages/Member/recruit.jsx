@@ -179,7 +179,7 @@ function PartDetail() {
       >
         모집 분야 자세히 보기
       </RecruitTitle>
-      <Row gap="1rem" justify="center" margin={"7.5rem 0 0 0"}>
+      <Row gap="1rem" justify="center" margin={"3rem 0 0 0"}>
         <PartButton
           style={{
             backgroundColor:
@@ -228,7 +228,7 @@ function PartDetail() {
       </Row>
 
       {part == 0 && (
-        <Col gap="1.5rem">
+        <Col gap="0rem">
           <Part title={constants.partTitle[0]} descriptions={constants.partDescription.intro.dev} />
           <Row justify="center" gap="1rem">
             <PartButton
@@ -293,7 +293,7 @@ function PartDetail() {
         </Col>
       )}
       {part == 1 && (
-        <Col gap="5rem">
+        <Col gap="2rem">
           <Part
             title={constants.partTitle[0]}
             descriptions={constants.partDescription.intro.design}
@@ -309,7 +309,7 @@ function PartDetail() {
         </Col>
       )}
       {part == 2 && (
-        <Col gap="5rem">
+        <Col gap="2rem">
           <Part
             title={constants.partTitle[0]}
             descriptions={constants.partDescription.intro.planner}
@@ -335,7 +335,7 @@ export default function RecruitPage() {
       <div className="recruitPage">
         <BannerImage src={RecruitBanner} />
         <Col margin="0 7.5rem" align="flex-start">
-          <Col gap="15rem" margin="13.75rem auto" width="100%">
+          <Col gap="15rem" margin="8.75rem auto" width="100%">
             <Intro />
             <Process />
             <PartDetail />
@@ -436,7 +436,7 @@ font-family: 'NanumSquareNeoExtraBold';
 function Part({ title, descriptions }) {
   const itemList = Array.isArray(descriptions) ? descriptions : [];
   return (
-    <Col align={"flex-start"} gap={"5rem"} padding={"5rem 0"} width={"100%"}>
+    <Col align={"flex-start"} gap={"1rem"} padding={"5rem 0"} width={"100%"}>
       <Title color="black" style={{ fontSize: "3rem" }}>
         {title}
       </Title>

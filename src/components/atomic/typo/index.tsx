@@ -97,7 +97,7 @@ export const RecruitText = styled(TypoRef)<{
   $bold?: Boolean;
 }>`
   margin-left: 2.5rem;
-  font-size: ${(p) => (p.highlight ? "2.25rem" : "2rem")};
+  font-size: ${(p) => (p.highlight ? "2.5rem" : "2rem")};
   font-weight: ${(p) => (p.$bold ? "700" : "500")};
   font-style: normal;
   li {
