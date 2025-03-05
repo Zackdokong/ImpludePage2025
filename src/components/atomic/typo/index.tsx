@@ -96,12 +96,13 @@ export const RecruitText = styled(TypoRef)<{
   highlight?: Boolean;
   $bold?: Boolean;
 }>`
+  margin-left: 2.5rem;
   font-size: ${(p) => (p.highlight ? "2.25rem" : "2rem")};
   font-weight: ${(p) => (p.$bold ? "700" : "500")};
   font-style: normal;
   li {
     text-indent: -3rem;
-    margin-left: 3rem;
+    margin-left: 4rem;
 
 font-family: 'NanumSquareNeoBold';
 @font-face {

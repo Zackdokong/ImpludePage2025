@@ -60,7 +60,7 @@ function Intro() {
 function Process() {
   return (
     <Col gap="9rem">
-      <Col gap="3.25rem">
+      <Col gap="0.5rem">
         <RecruitTitle color={"--gray-black"}>1. 포지션 선택하기</RecruitTitle>
         <RecruitText color={"--gray-black"}>
           임플루드의 포지션은 ‘FE, BE, 디자이너, 기획자’로 구성되어 있어요.
@@ -72,20 +72,21 @@ function Process() {
 
       <Col gap="6rem">
         <Col>
-          <Col gap="3.25rem">
+          <Col gap="0.5rem">
             <RecruitTitle color={"--gray-black"}>
               2. 지원서 작성하기
             </RecruitTitle>
-            <Col gap="3rem">
+            <Col gap="2rem">
               <RecruitText color={"--gray-black"}>
                 임플루드에서 활동하고싶은 포지션을 선택했다면, 이제 지원서를
                 작성할 차례에요.
               </RecruitText>
-              <Col gap="1.5rem">
+              <Col gap="1rem">
                 <RecruitText
                   color={"--gray-black"}
                   highlight={true}
                   $bold={true}
+                  className="littlebig"
                 >
                   지원서 작성 전 미리 확인해주시면 좋아요.
                 </RecruitText>
@@ -124,15 +125,15 @@ function Process() {
         </Row>
       </Col>
 
-      <Col gap="3.25rem">
+      <Col gap="0.5rem">
         <RecruitTitle color={"--gray-black"}>3. 면접 보기</RecruitTitle>
         <Col gap="3rem">
           <RecruitText color={"--gray-black"}>
             벌써 마지막 단계에요! 면접에서 합격한다면 임플루드의 일원으로서
             1년을 보내게 됩니다!
           </RecruitText>
-          <Col gap="1.5rem">
-            <RecruitText highlight={true} $bold={true} color={"--gray-black"}>
+          <Col gap="1rem">
+            <RecruitText highlight={true} $bold={true} color={"--gray-black"}className="littlebig">
               면접 참여 전 미리 확인해주시면 좋아요.
             </RecruitText>
             <RecruitText color={"--gray-black"}>
