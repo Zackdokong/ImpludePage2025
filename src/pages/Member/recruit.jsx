@@ -437,7 +437,7 @@ function Part({ title, descriptions }) {
   const itemList = Array.isArray(descriptions) ? descriptions : [];
   return (
     <Col align={"flex-start"} gap={"1 rem"} padding={"5rem 0"} width={"100%"}>
-      <Title color="black" style={{ fontSize: "3rem" }}>
+      <Title color="black" style={{ fontSize: "3rem", marginBottom: "1rem"}}>
         {title}
       </Title>
       <Col align="flex-start">
