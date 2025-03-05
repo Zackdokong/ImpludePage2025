@@ -49,7 +49,7 @@ function Intro() {
             </TitleCircle>
           ))}
         </Row>
-        <Description color={"--gray-400"} style={{ fontSize: "1.3rem"  }}>
+        <Description color={"--gray-400"} style={{ fontSize: "1.3rem" }}>
           *상황에 따라 유동적으로 변경될 수 있어요.
         </Description>
       </Col>
@@ -133,7 +133,12 @@ function Process() {
             1년을 보내게 됩니다!
           </RecruitText>
           <Col gap="1rem">
-            <RecruitText highlight={true} $bold={true} color={"--gray-black"}className="littlebig">
+            <RecruitText
+              highlight={true}
+              $bold={true}
+              color={"--gray-black"}
+              className="littlebig"
+            >
               면접 참여 전 미리 확인해주시면 좋아요.
             </RecruitText>
             <RecruitText color={"--gray-black"}>
@@ -229,7 +234,10 @@ function PartDetail() {
 
       {part == 0 && (
         <Col gap="0rem">
-          <Part title={constants.partTitle[0]} descriptions={constants.partDescription.intro.dev} />
+          <Part
+            title={constants.partTitle[0]}
+            descriptions={constants.partDescription.intro.dev}
+          />
           <Row justify="center" gap="1rem">
             <PartButton
               style={{
@@ -353,12 +361,17 @@ const BannerImage = styled.img`
 `;
 
 const TitleCircle = styled.div`
-font-family: 'NanumSquareNeoExtraBold' !important;
-@font-face {
-    font-family: 'NanumSquareNeoExtraBold';
+  font-family: "NanumSquareNeoExtraBold" !important;
+  @font-face {
+    font-family: "NanumSquareNeoExtraBold";
     src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.eot);
-    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.ttf) format("truetype");
-}
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.eot?#iefix)
+        format("embedded-opentype"),
+      url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.woff)
+        format("woff"),
+      url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.ttf)
+        format("truetype");
+  }
   display: flex;
   flex-basis: 11vw;
   flex-shrink: 0;
@@ -389,12 +402,17 @@ const CircleText = styled(Header2)`
     padding-right: 1rem;
   }
 
-font-family: 'NanumSquareNeoExtraBold';
-@font-face {
-    font-family: 'NanumSquareNeoExtraBold';
+  font-family: "NanumSquareNeoExtraBold";
+  @font-face {
+    font-family: "NanumSquareNeoExtraBold";
     src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.eot);
-    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.ttf) format("truetype");
-}
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.eot?#iefix)
+        format("embedded-opentype"),
+      url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.woff)
+        format("woff"),
+      url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.ttf)
+        format("truetype");
+  }
 `;
 
 const ApplyButton = styled.button`
@@ -425,19 +443,27 @@ const PartButton = styled.button`
 
 const RecruitTitle = styled(Title)`
   font-size: 3rem;
-font-family: 'NanumSquareNeoExtraBold';
-@font-face {
-    font-family: 'NanumSquareNeoExtraBold';
+  font-family: "NanumSquareNeoExtraBold";
+  @font-face {
+    font-family: "NanumSquareNeoExtraBold";
     src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.eot);
-    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.ttf) format("truetype");
-}
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.eot?#iefix)
+        format("embedded-opentype"),
+      url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.woff)
+        format("woff"),
+      url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.ttf)
+        format("truetype");
+  }
 `;
 
 function Part({ title, descriptions }) {
   const itemList = Array.isArray(descriptions) ? descriptions : [];
   return (
     <Col align={"flex-start"} gap={"1 rem"} padding={"5rem 0"} width={"100%"}>
-      <Title color="black" style={{ fontSize: "3rem", marginBottom: "1rem"}}>
+      <Title
+        color="black"
+        style={{ fontSize: "3rem", marginBottom: "1rem", marginLeft: "4.45rem" }}
+      >
         {title}
       </Title>
       <Col align="flex-start">
@@ -446,7 +472,7 @@ function Part({ title, descriptions }) {
             key={index}
             color="black"
             highlight={true}
-            style={{ fontSize: "1.8rem" }}
+            style={{ fontSize: "1.8rem", marginLeft: "6rem" }}
           >
             <li>{item}</li>
           </RecruitText>
