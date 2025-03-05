@@ -436,7 +436,7 @@ font-family: 'NanumSquareNeoExtraBold';
 function Part({ title, descriptions }) {
   const itemList = Array.isArray(descriptions) ? descriptions : [];
   return (
-    <Col align={"flex-start"} gap={"1rem"} padding={"5rem 0"} width={"100%"}>
+    <Col align={"flex-start"} gap={"1 rem"} padding={"5rem 0"} width={"100%"}>
       <Title color="black" style={{ fontSize: "3rem" }}>
         {title}
       </Title>
