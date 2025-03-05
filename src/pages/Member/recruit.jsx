@@ -462,7 +462,7 @@ function Part({ title, descriptions }) {
     <Col align={"flex-start"} gap={"1 rem"} padding={"5rem 0"} width={"100%"}>
       <Title
         color="black"
-        style={{ fontSize: "3rem", marginBottom: "1rem", marginLeft: "4.45rem" }}
+        style={{ fontSize: "3rem", marginBottom: "1rem", marginLeft: "6.45rem" }}
       >
         {title}
       </Title>
@@ -472,7 +472,7 @@ function Part({ title, descriptions }) {
             key={index}
             color="black"
             highlight={true}
-            style={{ fontSize: "1.8rem", marginLeft: "6rem" }}
+            style={{ fontSize: "1.8rem", marginLeft: "8rem" }}
           >
             <li>{item}</li>
           </RecruitText>
